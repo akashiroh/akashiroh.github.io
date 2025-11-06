@@ -3,6 +3,17 @@ html, body {
     margin: 0;
 }
 
+.page.title {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+}
+
+.page.title .logo {
+    width: 64px;
+    height: auto;
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
