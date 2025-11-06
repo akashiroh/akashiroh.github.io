@@ -1,4 +1,8 @@
-/* General page styles */
+img {
+    border-radius: 8px;
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
