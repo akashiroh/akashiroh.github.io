@@ -1,21 +1,27 @@
 ---
 layout: base
-title: Home
+title: Andrew Holmes Resume
 ---
 
-<!-- Embedded Resume -->
-<div id="resume-container" style="display:flex; justify-content:center; margin:40px 0;">
-  <iframe
-    src="/assets/resume/Andrew_Holmes_Resume.pdf"
-    title="Andrew Holmes Resume"
-    width="80%"
-    height="90vh"
-    style="border:2px solid #3c4056; border-radius:10px;">
-  </iframe>
+---
+layout: base
+title: Resume
+---
 
- <!-- Buttons Container -->
-  <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
+<div id="resume-container" style="display:flex; flex-direction:column; align-items:center; margin:40px 0; gap:20px;">
 
+  <!-- Embedded Resume -->
+  <object
+    data="/assets/resume/Andrew_Holmes_Resume.pdf"
+    type="application/pdf"
+    width="800px"
+    height="auto"
+    style="border:2px solid #3c4056; border-radius:10px; max-width:90vw;">
+    <p>Your browser does not support PDFs. <a href="/assets/resume/Andrew_Holmes_Resume.pdf">Download the PDF</a>.</p>
+  </object>
+
+  <!-- Buttons Container -->
+  <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
     <!-- Download Button -->
     <a href="/assets/resume/Andrew_Holmes_Resume.pdf" download
        style="background-color:#3c4056; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; font-size:1.2em; transition:background 0.3s;">
@@ -27,7 +33,7 @@ title: Home
        style="background-color:#3c4056; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; font-size:1.2em; transition:background 0.3s;">
       👁 View in New Tab
     </a>
-
   </div>
 
 </div>
+
