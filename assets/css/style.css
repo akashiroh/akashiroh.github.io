@@ -1,29 +1,18 @@
-
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
-
-body {
-    font-family: 'Gotham', sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
 main {
     flex: 1;
 }
 
-h1, h2, code, pre {
+body {
     font-family: 'Source Code Pro', monospace;
-    margin: 0;
-    padding: 0;
 }
 
-/* Top navigation bar */
+/* Header navigation */
 #topnav {
     background-color: #333;  /* dark background */
     color: white;
@@ -48,6 +37,7 @@ h1, h2, code, pre {
     color: white;
     text-decoration: none;
     margin-left: 15px;
+    font-size: 1.5em;
 }
 
 #topnav .nav-links a:hover {
@@ -55,20 +45,39 @@ h1, h2, code, pre {
 }
 
 /* Footer navigation */
+#bottomnav .nav-links {
+    margin-left: auto;
+}
+
+#bottomnav .footer-text {
+    margin: 0 auto;
+    font-size 1em;
+    color: #222;
+}
+
 #bottomnav {
-    background-color: #222;
+    background-color: #333;
     color: white;
     padding: 10px 20px;
+    display: flex;
     text-align: center;
     font-family: 'Source Code Pro', monospace;
+    justify-content: space-between;
 }
 
 #bottomnav a {
     color: white;
     text-decoration: none;
     margin: 0 10px;
+    font-size: 1.5em;
 }
 
+/* LinkedIn hover color */
 #bottomnav a:hover {
-    text-decoration: underline;
+    color: #0e76a8;
+}
+
+/* GitHub hover color */
+#bottomnav a:nth-child(2):hover {
+    color: #6cc644; /* GitHub green on hover */
 }
