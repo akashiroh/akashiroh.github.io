@@ -3,37 +3,54 @@ layout: base
 title: Andrew Holmes Resume
 ---
 
----
-layout: base
-title: Resume
----
+<div style="display:flex; flex-direction:column; align-items:center; gap:20px; margin:40px 0;">
 
-<div id="resume-container" style="display:flex; flex-direction:column; align-items:center; margin:40px 0; gap:20px;">
+  <!-- Resume Image -->
+  <img
+    src="/assets/resume/Andrew_Holmes_Resume.png"
+    alt="Andrew Holmes Resume"
+    style="
+        width:800px;
+        max-width:90vw;
+        border:2px solid #3c4056;
+        border-radius:10px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        background-color: white;
+    ">
 
-  <!-- Embedded Resume -->
-  <object
-    data="/assets/resume/Andrew_Holmes_Resume.pdf"
-    type="application/pdf"
-    width="800px"
-    height="auto"
-    style="border:2px solid #3c4056; border-radius:10px; max-width:90vw;">
-    <p>Your browser does not support PDFs. <a href="/assets/resume/Andrew_Holmes_Resume.pdf">Download the PDF</a>.</p>
-  </object>
-
-  <!-- Buttons Container -->
+    <!-- Buttons -->
   <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+
     <!-- Download Button -->
     <a href="/assets/resume/Andrew_Holmes_Resume.pdf" download
-       style="background-color:#3c4056; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; font-size:1.2em; transition:background 0.3s;">
+       class="resume-button">
       ⬇ Download Resume
     </a>
 
     <!-- View in New Tab Button -->
     <a href="/assets/resume/Andrew_Holmes_Resume.pdf" target="_blank"
-       style="background-color:#3c4056; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; font-size:1.2em; transition:background 0.3s;">
+       class="resume-button">
       👁 View in New Tab
     </a>
+
   </div>
 
 </div>
 
+<!-- Button Hover Styles -->
+<style>
+  .resume-button {
+    background-color: #3c4056;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .resume-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px); /* subtle lift effect */
+  }
+</style>
