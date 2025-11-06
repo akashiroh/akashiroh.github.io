@@ -85,7 +85,7 @@ body {
 }
 
 /* Contact hover color */
-#bottomnav a:nth-child(1):hover {
+#bottomnav a:hover {
     text-decoration: none;
     color: #fbd52b;
 }
@@ -99,5 +99,5 @@ body {
 /* GitHub hover color */
 #bottomnav a:nth-child(3):hover {
     text-decoration: none;
-    color: #6cc644; /* GitHub green on hover */
+    color: #6cc644;
 }
