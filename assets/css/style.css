@@ -43,10 +43,14 @@ body {
     text-decoration: none;
     margin-left: 15px;
     font-size: 1.5em;
+    padding: 5px 10px;          /* space inside the box */
+    border-radius: 8px;         /* rounded corners */
+    transition: background 0.3s, color 0.3s;  /* smooth effect */
 }
 
 #topnav .nav-links a:hover {
-    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.2); /* light grey semi-transparent */
+    color: #fff;
 }
 
 /* Footer navigation */
@@ -80,14 +84,20 @@ body {
     font-size: 1.5em;
 }
 
+/* Contact hover color */
+#bottomnav a:nth-child(r12):hover {
+    text-decoration: none;
+    color: #fbd52b;
+}
+
 /* LinkedIn hover color */
-#bottomnav a:hover {
+#bottomnav a:nth-child(2):hover {
     text-decoration: none;
     color: #0e76a8;
 }
 
 /* GitHub hover color */
-#bottomnav a:nth-child(2):hover {
+#bottomnav a:nth-child(3):hover {
     text-decoration: none;
     color: #6cc644; /* GitHub green on hover */
 }
