@@ -85,7 +85,7 @@ body {
 }
 
 /* Contact hover color */
-#bottomnav a:nth-child(r12):hover {
+#bottomnav a:nth-child(1):hover {
     text-decoration: none;
     color: #fbd52b;
 }
