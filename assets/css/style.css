@@ -68,9 +68,9 @@ body {
     text-decoration: none;
     margin-left: 15px;
     font-size: 1.5em;
-    padding: 5px 10px;          /* space inside the box */
-    border-radius: 8px;         /* rounded corners */
-    transition: background 0.3s, color 0.3s;  /* smooth effect */
+    padding: 5px 10px;  /* space inside the box */
+    border-radius: 8px; /* rounded corners */
+    transition: background 0.3s, color 0.3s;    /* smooth effect */
 }
 
 #topnav .nav-links a:hover {
@@ -82,7 +82,7 @@ body {
 #bottomnav {
     background-color: #3c4056;
     color: white;
-    padding: 10px 20px;
+    padding: 15px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
