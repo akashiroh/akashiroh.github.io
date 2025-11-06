@@ -3,6 +3,7 @@ html, body {
     margin: 0;
 }
 
+/* tab title logo */
 .page.title {
     display: flex;
     align-items: center;
