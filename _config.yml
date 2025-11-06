@@ -1,3 +1,4 @@
-theme: jekyll-theme-minimal
-title: Andrew Holmes Website
-description: _insert cool description here_
+title: "Andrew Holmes"
+description: "portfolio"
+baseurl: "" # Leave blank for GitHub Pages
+url: "https://akashiroh.github.io"
