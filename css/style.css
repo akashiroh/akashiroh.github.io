@@ -1,0 +1,51 @@
+/* General page styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Top navigation bar */
+#topnav {
+    background-color: #333;  /* dark background */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* space between site name and links */
+    align-items: center;
+}
+
+#topnav .name {
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+}
+
+#topnav .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+#topnav .nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Footer navigation */
+#bottomnav {
+    background-color: #222;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+#bottomnav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+#bottomnav a:hover {
+    text-decoration: underline;
+}
+
