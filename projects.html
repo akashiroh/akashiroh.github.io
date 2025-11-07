@@ -3,7 +3,119 @@ layout: base
 title: projects
 ---
 
-<h1>hello world!</h1>
-<p>
-Research
-</p>
+<style>
+
+a {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a.hover, a.focus {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+.about-block {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 80%;
+  margin: 60px auto;
+  padding: 40px;
+  color: white;
+  background-color: #726d80;
+  opacity: 0.85;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.about-img {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #f2e9e4;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  align-self: center;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin: 0 0 15px 0;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive: stack vertically on smaller screens */
+@media (max-width: 700px) {
+  .about-block {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-divider {
+    display: none;
+  }
+
+  .about-img {
+    margin-bottom: 20px;
+  }
+}
+</style>
+
+
+<div class="about-block">
+    <img src="/assets/imgs/hutch_logo.png" alt="Hutchinson ML Logo" class="about-img">
+    <div class="about-divider"></div>
+    <div class="about-text">
+        <h2>Hutchinson Machine Learning Research Group</h2>
+    </div>
+</div>
+
+<div class="about-block">
+    <div class="about-text">
+        <h2>Insert project cards here</h2>
+    </div>
+</div>
+
+
+<div class="about-block">
+    <img src="/assets/imgs/western_logo.png" alt="Western Logo" class="about-img">
+    <div class="about-divider"></div>
+    <div class="about-text">
+        <h2>Western Washington University</h2>
+    </div>
+</div>
+
+<div class="about-block">
+    <div class="about-text">
+        <h2>Insert project cards here</h2>
+    </div>
+</div>
+
+
+<div class="about-block">
+    <img src="/assets/imgs/transparent-logo.png" alt="My Logo" class="about-img">
+    <div class="about-divider"></div>
+    <div class="about-text">
+        <h2>Personal Projects</h2>
+    </div>
+</div>
+
+<div class="about-block">
+    <div class="about-text">
+        <h2>Insert project cards here</h2>
+    </div>
+</div>
