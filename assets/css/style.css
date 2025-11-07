@@ -64,6 +64,7 @@ body {
 }
 
 #topnav .nav-links a {
+    display: inline-block;
     color: white;
     background-color: #3c4056;
     text-decoration: none;
@@ -71,7 +72,7 @@ body {
     font-size: 1.5em;
     padding: 5px 10px;  /* space inside the box */
     border-radius: 8px; /* rounded corners */
-    transition: background 0.3s, color 0.3s;    /* smooth effect */
+    transition: background 0.3s, transform 0.2s;
 }
 
 #topnav .nav-links a:hover {
