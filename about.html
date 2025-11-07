@@ -3,7 +3,83 @@ layout: base
 title: about
 ---
 
-<h1>hello world!</h1>
-<p>
-This here is just one paragraph example. I can write about who I am as a Machine Learning Researcher.
-</p>
+<style>
+
+.about-block {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #726d80;
+  opacity: 0.75;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.about-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #f2e9e4;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.about-divider {
+  width: 1px;
+  height: 120px;
+  background-color: #f2e9e4;
+  opacity: 0.4;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin: 0 0 15px 0;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive: stack vertically on smaller screens */
+@media (max-width: 700px) {
+  .about-block {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-divider {
+    display: none;
+  }
+
+  .about-img {
+    margin-bottom: 20px;
+  }
+}
+</style>
+
+<div class="about-block">
+    <img src="/assets/imgs/profile.png" alt="Profile Photo" class="about-img">
+    <div class="about-divider"></div>
+    <div class="about-text">
+        <h2>hello world,</h2>
+        <h2>I'm Andrew Holmes!</h2>
+        <p>
+            I'm a Grad Student at Western Washington University specializing in application-driven machine learning. For the past 3 years I have been a part of the Hutchinson Machine Learning Research Group, leveraging large datasets and deep learning to improve climate and economic modelling. We need to create efficient alternatives to computationally expensive models and create work that yields benefit to real people. My main focus of research lies in developing deep learning-based models to emulate multisector dynamics models and integrated assessment models, producing a tool to study specific research questions in a fraction of the time required by traditional methods and offering new capabilities in exploring the sensitivities and uncertainty of the orginal model.
+        </p>
+        <p>
+            My other work involves applying state-of-the-art models to tasks in Archaeology, Animal Welfare, and Natural Language Processing. Check out my projects to learn more!
+        </p>
+        <p>
+            When I am away from the keyboard, I enjoy rock climbing, hiking/camping, outrigger paddling, reading, and playing board games.
+        </p>
+    </div>
+</div>

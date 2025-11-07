@@ -26,7 +26,6 @@ html, body {
 }
 
 
-
 /* tab title logo */
 .page.title {
     display: flex;
@@ -61,9 +60,10 @@ main.content {
   z-index: -1; /* order */
 }
 
-body {
+body, h1, h2 {
     font-family: 'Source Code Pro', monospace;
 }
+
 
 /* Header navigation */
 #topnav {
@@ -151,12 +151,14 @@ body {
     text-decoration: none;
     margin: 0 10px;
     font-size: 1.5em;
+    /* transition: transform 0.2s ease, color 0.2s ease; */
 }
 
 /* Contact hover color */
 #bottomnav a:hover {
     text-decoration: none;
     color: #fbd52b;
+    /* transform: translateY(-4px); */
 }
 
 /* LinkedIn hover color */
