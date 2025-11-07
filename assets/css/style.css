@@ -3,6 +3,29 @@ html, body {
     margin: 0;
 }
 
+.text-block {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px 30px;
+    background-color: rgba(154, 140, 152, 0.8);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    font-family: 'Source Code Pro', monospace;
+    text-align: center;
+}
+
+.text-block h2 {
+    margin-bottom: 15px;
+    font-size: 50px;
+}
+
+.text-block p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+
 
 /* tab title logo */
 .page.title {
