@@ -7,6 +7,27 @@ title: home
   <img src="/assets/imgs/banner/enchantments.jpg" alt="Site banner">
 </div>
 
+<script>
+    // Array of banner image paths
+    const banners = [
+    "/assets/images/raft1.jpg",
+    "/assets/images/raft2.jpg",
+    "/assets/images/raft3.jpg",
+    "/assets/images/enchantments1.jpg",
+    "/assets/images/enchantments2.jpg",
+    "/assets/images/enchantments3.jpg",
+    ];
+
+    let index = 0;
+    const bannerImg = document.getElementById("banner-img");
+
+    // Change image every 5 seconds
+    setInterval(() => {
+    index = (index + 1) % banners.length;
+    bannerImg.src = banners[index];
+    }, 5000);
+</script>
+
 
 <h1>hello world!</h1>
 <p>This is your home page content.</p>
