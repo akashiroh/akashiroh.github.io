@@ -105,6 +105,15 @@ body {
     flex: 1;
 }
 
+.footer-name {
+    margin-bottom: 5px; /* space between lines */
+}
+
+.footer-copy {
+    font-size: 0.9em;
+    opacity: 0.8; /* subtle secondary text */
+}
+
 #bottomnav a {
     color: white;
     text-decoration: none;
