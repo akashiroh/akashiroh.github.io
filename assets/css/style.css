@@ -72,7 +72,7 @@ body {
     color: white;
     padding: 15px 20px;
     display: flex;
-    justify-content: space-between; /* space between site name and links */
+    justify-content: space-between;
     align-items: center;
     font-family: 'Source Code Pro', monospace;
 }
@@ -81,6 +81,12 @@ body {
 .logo img {
     height: 75px;
     width: auto;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logo img:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 #topnav .nav-links {
@@ -103,6 +109,7 @@ body {
 #topnav .nav-links a:hover {
     color: #726d80;
     background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
 
 /* Footer navigation */
