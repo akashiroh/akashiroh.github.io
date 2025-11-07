@@ -44,8 +44,7 @@ body {
 
 /* Header navigation */
 #topnav {
-    background-color: #3c4056;  /* dark background */
-    opacity: 0.25;
+    background-color: #f2e9e4;
     color: white;
     padding: 20px 20px;
     display: flex;
