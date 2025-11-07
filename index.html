@@ -4,29 +4,8 @@ title: home
 ---
 
 <div id="banner">
-  <img id="banner-img" src="/assets/imgs/banner/enchantments.jpg" alt="Site banner">
+  <img src="/assets/imgs/banner/enchantments.jpg" alt="Site banner">
 </div>
-
-<script>
-    // Array of banner image paths
-    const banners = [
-    "/assets/imgs/banner/raft1.jpg",
-    "/assets/imgs/banner/raft2.jpg",
-    "/assets/imgs/banner/raft3.jpg",
-    "/assets/imgs/banner/enchantments1.jpg",
-    "/assets/imgs/banner/enchantments2.jpg",
-    "/assets/imgs/banner/enchantments3.jpg",
-    ];
-
-    let index = 0;
-    const bannerImg = document.getElementById("banner-img");
-
-    // Change image every 5 seconds
-    setInterval(() => {
-    index = (index + 1) % banners.length;
-    bannerImg.src = banners[index];
-    }, 5000);
-</script>
 
 
 <h1>hello world!</h1>
