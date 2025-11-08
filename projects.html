@@ -99,7 +99,7 @@ title: Projects
   cursor: pointer;
   flex: 1 1 calc(33.333% - 20px);
   box-sizing: border-box;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   max-height: 200px;
   overflow: hidden;
   display: flex;
@@ -134,7 +134,7 @@ title: Projects
 /* Expanded Card */
 .project-card.expanded {
   flex: 1 1 100%;
-  max-height: 1000px; /* adjust as needed */
+  max-height: 1000px; /* adjust to content */
   z-index: 1000;
 }
 
@@ -152,7 +152,6 @@ title: Projects
 </style>
 
 <script>
-<script>
 document.addEventListener('DOMContentLoaded', function() {
   const cards = document.querySelectorAll('.project-card');
 
@@ -161,20 +160,29 @@ document.addEventListener('DOMContentLoaded', function() {
       const isExpanded = this.classList.contains('expanded');
 
       if (isExpanded) {
-        // Collapse the currently expanded card
+        // Collapse the expanded card
         this.classList.remove('expanded');
 
-        // Wait for the transition to finish before showing other cards
-        this.addEventListener('transitionend', function handler() {
-          cards.forEach(c => c.style.display = '');
-          this.removeEventListener('transitionend', handler);
+        // Wait for transition to finish before showing other cards
+        this.addEventListener('transitionend', function handler(e) {
+          if (e.propertyName === 'max-height') {
+            cards.forEach(c => c.style.display = '');
+            this.removeEventListener('transitionend', handler);
+          }
         });
       } else {
+        // First, ensure all cards are visible so expand transition works
+        cards.forEach(c => c.style.display = '');
+
         // Expand clicked card
-        cards.forEach(c => {
-          if (c !== this) c.style.display = 'none';
-        });
         this.classList.add('expanded');
+
+        // Hide other cards after a tiny delay to allow transition start
+        setTimeout(() => {
+          cards.forEach(c => {
+            if (c !== this) c.style.display = 'none';
+          });
+        }, 50);
       }
     });
   });
