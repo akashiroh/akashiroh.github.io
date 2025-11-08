@@ -27,6 +27,7 @@
         <a href="/projects">projects</a>
         <a href="/social">social</a>
       </div>
+      <div class="hamburger" style="font-weight: bold;">&#9776;</div>
     </header>
 
     <div class="background-overlay"></div>
@@ -55,6 +56,22 @@
             </a>
         </div>
     </footer>
+
+    <!-- hamburger stuff -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    	const hamburger = document.querySelector('.hamburger');
+    	const navLinks = document.querySelector('.nav-links');
+    	const topNav = document.querySelector('#topnav');
+
+    	if (hamburger && navLinks) {
+    		hamburger.addEventListener('click', function() {
+    			navLinks.classList.toggle('show');
+    			topNav.classList.toggle('dark')
+    		});
+    	}
+    });
+    </script>
 
     </div>
 
