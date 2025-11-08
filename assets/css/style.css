@@ -138,11 +138,8 @@ body, h1, h2 {
     flex: 1;
 }
 
-.footer-name {
-    margin-bottom: 5px; /* space between lines */
-}
-
-.footer-copy {
+.footer-info {
+    text-align: left;
     font-size: 0.9em;
     opacity: 0.8; /* subtle secondary text */
 }
