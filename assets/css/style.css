@@ -129,7 +129,6 @@ body, h1, h2 {
 #bottomnav .nav-links {
     position: relative;
     right: 20px;
-    gap: 10px;
     display: flex;
 }
 
@@ -176,4 +175,25 @@ body, h1, h2 {
 #bottomnav a:nth-child(4):hover {
     text-decoration: none;
     color: #4285F4;
+}
+
+@media (max-width: 700px) {
+    #bottomnav .footer-text {
+        display: none;
+    }
+    
+    /* Center the links in the footer */
+    #bottomnav .nav-links {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    #bottomnav .nav-links a {
+        font-size: 1.5em;
+        margin: 0 15px;
+    }
 }
