@@ -13,7 +13,7 @@ title: Projects
     </div>
 
     <div class="project-grid">
-      <div class="project-card">
+      <div class="project-card" data-index="0">
         <img src="/assets/imgs/project1-logo.png" alt="Project 1 Logo" class="project-card-logo">
         <h3>Project 1</h3>
         <p class="project-summary">Short summary of project 1.</p>
@@ -22,7 +22,7 @@ title: Projects
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" data-index="1">
         <img src="/assets/imgs/project2-logo.png" alt="Project 2 Logo" class="project-card-logo">
         <h3>Project 2</h3>
         <p class="project-summary">Short summary of project 2.</p>
@@ -31,7 +31,7 @@ title: Projects
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" data-index="2">
         <img src="/assets/imgs/project3-logo.png" alt="Project 3 Logo" class="project-card-logo">
         <h3>Project 3</h3>
         <p class="project-summary">Short summary of project 3.</p>
@@ -40,7 +40,7 @@ title: Projects
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" data-index="3">
         <img src="/assets/imgs/project4-logo.png" alt="Project 4 Logo" class="project-card-logo">
         <h3>Project 4</h3>
         <p class="project-summary">Short summary of project 4.</p>
@@ -59,7 +59,7 @@ title: Projects
     </div>
 
     <div class="project-grid">
-      <div class="project-card">
+      <div class="project-card" data-index="0">
         <img src="/assets/imgs/project5-logo.png" alt="Project 5 Logo" class="project-card-logo">
         <h3>Project 5</h3>
         <p class="project-summary">Short summary of project 5.</p>
@@ -68,7 +68,7 @@ title: Projects
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" data-index="1">
         <img src="/assets/imgs/project6-logo.png" alt="Project 6 Logo" class="project-card-logo">
         <h3>Project 6</h3>
         <p class="project-summary">Short summary of project 6.</p>
@@ -126,6 +126,7 @@ title: Projects
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  transition: all 0.4s ease;
 }
 
 .project-card {
@@ -135,9 +136,9 @@ title: Projects
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   cursor: pointer;
-  flex: 1 1 calc(33.333% - 20px); /* 3 per row max, min 1 per row */
+  flex: 1 1 calc(33.333% - 20px);
   max-width: calc(33.333% - 20px);
-  min-width: 200px; /* ensures uniform size across companies */
+  min-width: 200px;
   box-sizing: border-box;
   transition: all 0.4s ease;
   max-height: 200px;
@@ -180,11 +181,6 @@ title: Projects
   display: block;
 }
 
-/* Move other cards to next row while keeping their dimensions */
-.project-grid.expanded {
-  flex-wrap: wrap;
-}
-
 .project-grid.expanded .project-card:not(.expanded) {
   flex: 1 1 calc(33.333% - 20px);
   max-width: calc(33.333% - 20px);
@@ -208,12 +204,19 @@ document.addEventListener('DOMContentLoaded', function() {
     let expandedCard = null;
     const cards = Array.from(grid.querySelectorAll('.project-card'));
 
+    // Save original order
+    const originalOrder = cards.slice();
+
     cards.forEach(card => {
       card.addEventListener('click', function() {
         if (expandedCard === this) {
           // minimize current
           this.classList.remove('expanded');
           grid.classList.remove('expanded');
+
+          // restore original order
+          originalOrder.forEach(c => grid.appendChild(c));
+
           expandedCard = null;
         } else {
           // collapse previous
@@ -224,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function() {
           grid.classList.add('expanded');
           expandedCard = this;
 
-          // reorder: move expanded card to start of grid
+          // move expanded card to top
           grid.insertBefore(this, grid.firstChild);
 
           // smooth scroll to expanded card
