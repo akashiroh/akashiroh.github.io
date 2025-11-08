@@ -3,35 +3,59 @@
   projects:
     - title: Emulating the Global Change Analysis Model
       logo: /assets/imgs/gcam_logo.png
-      summary: Using deep learning to emulate climate-economic system models.
-      details: We use neural network architectures to reproduce results from the Global Change Analysis Model (GCAM), enabling faster scenario exploration for sustainability analysis.
-      arxiv: https://arxiv.org/abs/XXXX
-      github: https://github.com/username/gcam
-      visualizations: /projects/gcam
+      summary: Collaboration with the Pacific Northwest National Lab and Joint Global Change Research Institute to train a model that is able to emulate the outputs and sensitivities of GCAM.
+      details: We explore two GCAM ensemble designs, {renewable energy, food scarcity}, by training a neural network to emulate each case study. We explore the relationship between training samples and maximum model generalizability to limit the upfront compute needed to run GCAM simulations to produce the training data, decreasing the simulation time by 50%. This efficient emulator is used to discover the optimal training dataset by sampling the most uncertain regions of the input space, further decreasing training samples needed, and is used to discover the optimal input configuration that yields desirable climate futures.
+      arxiv: https://arxiv.org/abs/2412.08850
+      github: https://github.com/hutchresearch/GCAMnet
+      presentation: https://neurips.cc/virtual/2024/100548
 
     - title: Semantic Segmentation for Archaeology
       logo: /assets/imgs/project2-logo.png
-      summary: AI-assisted discovery of ancient structures.
-      details: Developing segmentation models for aerial and satellite imagery to help archaeologists identify and map buried features.
+      summary: Collaboration with Archaeology department at WWU to fine-tune a semantic segmentation model.
+      details: |
+        We fine-tune te state-of-the-art semantic segmentation model on aerial lidar data for binary classification of pixels. We train on 50m x 50m patches of data on elevation, number of returns, intensity, and relative elevation with varying radii. We are training and computing metrics between our predictions and ground-surveyed data rather than lidar derived data, making this task specifically noisy. We achieve 0.56 F1 score and 0.41 mIoU.
+
+        _Manuscript for this work is in preparation for Remote Sensing Journal 2025_
+
+    - title: Computational Animal Welfare
+      logo: /assets/imgs/project2-logo.png
+      summary: Collaboration with the Woodland Park Zoo to utilize video object tracking and image object detection to track animal behavior and enclosure usage.
+      details: |
+        We deploy a variant of Meta AI's SAM2 to track animals via surveillance footage and a fine-tuned YOLO model to detect the initial bounding box of the animal.
+
+        _This work is ongoing_
 
 - company: Western Washington University
   logo: /assets/imgs/western_logo.png
   projects:
     - title: Grapheme to Phoneme Translation
       logo: /assets/imgs/project5-logo.png
-      summary: Translating written words to phonetic representations using deep seq2seq models.
-      github: https://github.com/username/g2p
+      summary:
 
     - title: Rubiks Cubot
       logo: /assets/imgs/project6-logo.png
-      summary: Autonomous robot that solves a Rubik’s Cube.
-      details: Combined computer vision, robotics, and reinforcement learning to solve 3x3x3 cubes in under 60 seconds.
+      summary:
+      details:
 
 - company: Personal Projects
   logo: /assets/imgs/logo.png
   projects:
-    - title: Image Generative AI
+    - title: Diffusion Model
       logo: /assets/imgs/project5-logo.png
-      summary: Experimenting with diffusion and GAN-based architectures for image generation.
-      github: https://github.com/username/image-gen
+      summary:
+      github:
 
+    - title: Generative Adversarial Model
+      logo: /assets/imgs/project5-logo.png
+      summary:
+      github:
+
+    - title: Ski to Sea Result Visualizations
+      logo: /assets/imgs/project5-logo.png
+      summary:
+      github:
+
+    - title: Enchantments Lottery Data Exploration
+      logo: /assets/imgs/project5-logo.png
+      summary:
+      github:
