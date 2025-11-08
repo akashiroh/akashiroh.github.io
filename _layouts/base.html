@@ -1,20 +1,5 @@
 <!DOCTYPE html>
 
-<!-- hamburger stuff -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-const topNav = document.querySelector('#topnav');
-
-if (hamburger && navLinks) {
-	hamburger.addEventListener('click', function() {
-		navLinks.classList.toggle('show');
-		topNav.classList.toggle('dark')
-	});
-}
-});
-</script>
 
 
 <html>
@@ -75,6 +60,23 @@ if (hamburger && navLinks) {
     </footer>
 
     </div>
+
+    <!-- hamburger stuff -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const topNav = document.querySelector('#topnav');
+    
+    if (hamburger && navLinks) {
+    	hamburger.addEventListener('click', function() {
+    		navLinks.classList.toggle('show');
+    		topNav.classList.toggle('dark')
+    	});
+    }
+    });
+    </script>
+
 
 </body>
 </html>
