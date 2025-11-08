@@ -1,0 +1,37 @@
+- company: Hutchinson Machine Learning Research Group
+  logo: /assets/imgs/hutch_logo.png
+  projects:
+    - title: Emulating the Global Change Analysis Model
+      logo: /assets/imgs/gcam_logo.png
+      summary: Using deep learning to emulate climate-economic system models.
+      details: We use neural network architectures to reproduce results from the Global Change Analysis Model (GCAM), enabling faster scenario exploration for sustainability analysis.
+      arxiv: https://arxiv.org/abs/XXXX
+      github: https://github.com/username/gcam
+      visualizations: /projects/gcam
+
+    - title: Semantic Segmentation for Archaeology
+      logo: /assets/imgs/project2-logo.png
+      summary: AI-assisted discovery of ancient structures.
+      details: Developing segmentation models for aerial and satellite imagery to help archaeologists identify and map buried features.
+
+- company: Western Washington University
+  logo: /assets/imgs/western_logo.png
+  projects:
+    - title: Grapheme to Phoneme Translation
+      logo: /assets/imgs/project5-logo.png
+      summary: Translating written words to phonetic representations using deep seq2seq models.
+      github: https://github.com/username/g2p
+
+    - title: Rubiks Cubot
+      logo: /assets/imgs/project6-logo.png
+      summary: Autonomous robot that solves a Rubik’s Cube.
+      details: Combined computer vision, robotics, and reinforcement learning to solve 3x3x3 cubes in under 60 seconds.
+
+- company: Personal Projects
+  logo: /assets/imgs/logo.png
+  projects:
+    - title: Image Generative AI
+      logo: /assets/imgs/project5-logo.png
+      summary: Experimenting with diffusion and GAN-based architectures for image generation.
+      github: https://github.com/username/image-gen
+

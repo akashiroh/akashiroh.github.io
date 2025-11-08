@@ -4,261 +4,40 @@ title: Projects
 ---
 
 <div class="projects-page">
-
-  <!-- Company 1 -->
-  <div class="project-company-block">
-    <div class="project-header">
-      <img src="/assets/imgs/hutch_logo.png" alt="Hutch Research Logo" class="project-logo">
-      <h2 class="project-company">Hutchinson Machine Learning Research Group</h2>
-    </div>
-
-    <div class="project-grid">
-      <div class="project-card" data-index="0">
-        <img src="/assets/imgs/gcam_logo.png" alt="GCAM" class="project-card-logo">
-        <div class="project-card-content">
-          <h3>Emulating the Global Change Analysis Model with Deep Learning</h3>
-          <p class="project-summary">Short summary of project 1.</p>
-          <div class="project-details">
-            <p>Detailed information about project 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-        </div>
+  {% for company in site.data.projects %}
+    <div class="project-company-block">
+      <div class="project-header">
+        <img src="{{ company.logo }}" alt="{{ company.company }} Logo" class="project-logo">
+        <h2 class="project-company">{{ company.company }}</h2>
       </div>
 
-      <div class="project-card" data-index="1">
-        <img src="/assets/imgs/project2-logo.png" alt="Archaeology" class="project-card-logo">
-        <div class="project-card-content">
-          <h3>Semantic Segmentation for Archaeology</h3>
-          <p class="project-summary">Short summary of project 2.</p>
-          <div class="project-details">
-            <p>Detailed information about project 2. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-          </div>
-        </div>
-      </div>
+      <div class="project-grid">
+        {% for project in company.projects %}
+          <div class="project-card">
+            <img src="{{ project.logo }}" alt="{{ project.title }}" class="project-card-logo">
+            <div class="project-card-content">
+              <h3>{{ project.title }}</h3>
+              <p class="project-summary">{{ project.summary }}</p>
+              <div class="project-details">
+                <p>{{ project.details }}</p>
+              </div>
 
-      <div class="project-card" data-index="2">
-        <img src="/assets/imgs/project3-logo.png" alt="Zoo" class="project-card-logo">
-        <div class="project-card-content">
-          <h3>Computational Animal Welfare</h3>
-          <p class="project-summary">Short summary of project 3.</p>
-          <div class="project-details">
-            <p>Detailed information about project 3. Excepteur sint occaecat cupidatat non proident.</p>
+              <div class="project-buttons">
+                {% if project.arxiv %}
+                  <a href="{{ project.arxiv }}" target="_blank" class="project-btn">arXiv</a>
+                {% endif %}
+                {% if project.visualizations %}
+                  <a href="{{ project.visualizations }}" class="project-btn">Visualizations</a>
+                {% endif %}
+                {% if project.github %}
+                  <a href="{{ project.github }}" target="_blank" class="project-btn">GitHub</a>
+                {% endif %}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <div class="project-card" data-index="3">
-        <img src="/assets/imgs/project4-logo.png" alt="Toddler" class="project-card-logo">
-        <div class="project-card-content">
-          <h3>Automatic Speech Recognition</h3>
-          <p class="project-summary">Short summary of project 4.</p>
-          <div class="project-details">
-            <p>Detailed information about project 4. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
-  </div>
-
-  <!-- Company 2 -->
-  <div class="project-company-block">
-    <div class="project-header">
-      <img src="/assets/imgs/western_logo.png" alt="WWU Logo" class="project-logo">
-      <h2 class="project-company">Western Washington University</h2>
-    </div>
-
-    <div class="project-grid">
-      <div class="project-card" data-index="0">
-        <img src="/assets/imgs/project5-logo.png" alt="G2P" class="project-card-logo">
-        <div class="project-card-content">
-          <h3>Grapheme to Phoneme Translation</h3>
-          <p class="project-summary">Short summary of project 5.</p>
-          <div class="project-details">
-            <p>Detailed information about project 5. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card" data-index="1">
-        <img src="/assets/imgs/project6-logo.png" alt="Rubiks" class="project-card-logo">
-        <div class="project-card-content">
-          <h3>Rubiks Cubot</h3>
-          <p class="project-summary">Short summary of project 6.</p>
-          <div class="project-details">
-            <p>Detailed information about project 6. Excepteur sint occaecat cupidatat non proident.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card" data-index="2">
-        <img src="/assets/imgs/project6-logo.png" alt="Bio" class="project-card-logo">
-        <div class="project-card-content">
-          <h3>Automated Cell Segmentation</h3>
-          <p class="project-summary">Short summary of project 7.</p>
-          <div class="project-details">
-            <p>Detailed information about project 7. Excepteur sint occaecat cupidatat non proident.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  {% endfor %}
 </div>
-
-<style>
-h2 {
-  font-family: 'Source Code Pro', monospace;
-}
-
-.projects-page {
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 20px;
-  font-family: 'Source Code Pro', monospace;
-}
-
-.project-company-block {
-  margin-bottom: 60px;
-}
-
-.project-header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background-color: #726d80;
-  color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  margin-bottom: 20px;
-}
-
-.project-logo {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  border-radius: 8px;
-  border: 4px solid #fff;
-  background-color: #fff;
-}
-
-.project-company {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.project-card {
-  background-color: #726d80;
-  color: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  cursor: pointer;
-
-  /* TWO cards per row on wide screens */
-  flex: 0 1 calc(50% - 10px); /* 50% minus half the gap */
-  min-width: 300px;
-
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 15px;
-  transition: all 0.4s ease;
-  max-height: 200px;
-  overflow: hidden;
-}
-
-.project-card-logo {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  border-radius: 8px;
-  background-color: #fff;
-  border: 1px solid #f2e9e4;
-}
-
-.project-card-content {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.project-card h3 {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.project-summary, .project-details {
-  display: none;
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-.project-card.expanded {
-  grid-column: 1 / -1; /* span all columns */
-  max-height: 1000px;
-  display: flex;
-  flex-direction: row; /* keep your side-by-side logo + content */
-  align-items: flex-start;
-  z-index: 1;
-}
-
-.project-card.expanded .project-summary,
-.project-card.expanded .project-details {
-  display: block;
-}
-
-/* Responsive: 1 card per row on small screens */
-@media (max-width: 800px) {
-  .project-card {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-  .project-card.expanded {
-    flex-direction: column;
-  }
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const grids = document.querySelectorAll('.project-grid');
-
-  grids.forEach(grid => {
-    let expandedCard = null;
-    const cards = Array.from(grid.querySelectorAll('.project-card'));
-    const originalOrder = cards.slice();
-
-    cards.forEach(card => {
-      card.addEventListener('click', function() {
-        if (expandedCard === this) {
-          this.classList.remove('expanded');
-          grid.classList.remove('expanded');
-          originalOrder.forEach(c => grid.appendChild(c));
-          expandedCard = null;
-        } else {
-          if (expandedCard) expandedCard.classList.remove('expanded');
-
-          this.classList.add('expanded');
-          grid.classList.add('expanded');
-          expandedCard = this;
-
-          grid.insertBefore(this, grid.firstChild);
-          this.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-  });
-});
-</script>
 
