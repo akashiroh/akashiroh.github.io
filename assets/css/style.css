@@ -178,16 +178,22 @@ body, h1, h2 {
 }
 
 @media (max-width: 700px) {
+    #bottomnav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+    }
+    
     #bottomnav .footer-text {
         display: none;
     }
     
-    /* Center the links in the footer */
     #bottomnav .nav-links {
         position: relative;
         display: flex;
         justify-content: center;
-        width: 100%;
+        width: auto;
         margin: 0;
         padding: 10px 0;
     }
