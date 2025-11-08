@@ -1,124 +1,159 @@
 ---
 layout: base
-title: projects
+title: Projects
 ---
 
+<div class="projects-page">
+
+  <!-- Header Card -->
+  <div class="project-header">
+    <img src="/assets/imgs/company-logo.png" alt="Company Logo" class="project-logo">
+    <h2 class="project-company">My Company</h2>
+  </div>
+
+  <!-- Project Grid -->
+  <div class="project-grid">
+    <div class="project-card">
+      <h3>Project 1</h3>
+      <p class="project-summary">Short summary of project 1.</p>
+      <div class="project-details">
+        <p>Detailed information about project 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Project 2</h3>
+      <p class="project-summary">Short summary of project 2.</p>
+      <div class="project-details">
+        <p>Detailed information about project 2. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Project 3</h3>
+      <p class="project-summary">Short summary of project 3.</p>
+      <div class="project-details">
+        <p>Detailed information about project 3. Excepteur sint occaecat cupidatat non proident.</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Project 4</h3>
+      <p class="project-summary">Short summary of project 4.</p>
+      <div class="project-details">
+        <p>Detailed information about project 4. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 <style>
-
-a {
-    color: #007bff;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-a.hover, a.focus {
-    text-decoration: underline;
-    color: #0056b3;
-}
-
-.about-block {
-  display: flex;
-  align-items: flex-start;
-  max-width: 80%;
+/* ===== Project Page Styles ===== */
+.projects-page {
+  max-width: 1000px;
   margin: 60px auto;
-  gap: 15px;
   padding: 20px;
-  color: white;
+  font-family: 'Source Code Pro', monospace;
+}
+
+/* Header Card */
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   background-color: #726d80;
-  opacity: 0.85;
+  color: white;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
-.about-block h2 {
-  font-size: clamp(1rem, 2.5vw, 38px);
-}
-
-.about-block p {
-  font-size: clamp(1rem, 2.5vw, 26px);
-}
-
-.about-img {
-  width: 100px;
-  height: 100px;
-  border-radius: 8px;
+.project-logo {
+  width: 80px;
+  height: 80px;
   object-fit: contain;
-  background-color: #fff;
+  border-radius: 8px;
   border: 1px solid #f2e9e4;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  align-self: center;
+  background-color: #fff;
 }
 
-.about-text p {
-  line-height: 1.6;
-  margin-bottom: 1em;
+.project-company {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin: 0;
+  white-space: nowrap; /* prevent wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.about-text p:last-child {
-  margin-bottom: 0;
+
+/* Project Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }
 
-@media (max-width: 700px) {
-  .about-block {
-    flex-direction: column;
-    text-align: left;
-  }
+/* Project Card */
+.project-card {
+  background-color: #726d80;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  cursor: pointer;
+  overflow: hidden;
+  max-height: 200px; /* collapsed height */
+  transition: all 0.3s ease;
+}
 
-  .about-block h2 {
-    font-size: 32px;
-    font-family: 'Source Code Pro', monospace;
-  }
+.project-card h3 {
+  margin-top: 0;
+}
 
-  .about-block h2 {
-    font-size: 18px;
-  }
+.project-summary {
+  margin-bottom: 0.5em;
+}
 
-  .about-img {
-    margin-bottom: 20px;
+.project-details {
+  display: none;
+  margin-top: 10px;
+}
+
+/* Expanded Card */
+.project-card.expanded {
+  max-height: 500px; /* adjust as needed */
+  grid-column: span 3;
+}
+
+.project-card.expanded .project-details {
+  display: block;
+}
+
+/* Responsive tweaks */
+@media (max-width: 800px) {
+  .project-card.expanded {
+    grid-column: span 1; /* mobile: expand to full width of column */
   }
 }
 </style>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const cards = document.querySelectorAll('.project-card');
 
-<div class="about-block">
-    <img src="/assets/imgs/hutch_logo.png" alt="Hutchinson ML Logo" class="about-img">
-    <div class="about-divider"></div>
-    <div class="about-text">
-        <h2>Hutchinson Machine Learning Research Group</h2>
-    </div>
-</div>
+  cards.forEach(card => {
+    card.addEventListener('click', function() {
+      // If already expanded, collapse it
+      if (this.classList.contains('expanded')) {
+        this.classList.remove('expanded');
+      } else {
+        // Collapse all others
+        cards.forEach(c => c.classList.remove('expanded'));
+        this.classList.add('expanded');
+      }
+    });
+  });
+});
+</script>
 
-<div class="about-block">
-    <div class="about-text">
-        <h2>Insert project cards here</h2>
-    </div>
-</div>
-
-
-<div class="about-block">
-    <img src="/assets/imgs/western_logo.png" alt="Western Logo" class="about-img">
-    <div class="about-divider"></div>
-    <div class="about-text">
-        <h2>Western Washington University</h2>
-    </div>
-</div>
-
-<div class="about-block">
-    <div class="about-text">
-        <h2>Insert project cards here</h2>
-    </div>
-</div>
-
-
-<div class="about-block">
-    <img src="/assets/imgs/logo.png" alt="My Logo" class="about-img">
-    <div class="about-divider"></div>
-    <div class="about-text">
-        <h2>Personal Projects</h2>
-    </div>
-</div>
-
-<div class="about-block">
-    <div class="about-text">
-        <h2>Insert project cards here</h2>
-    </div>
-</div>
