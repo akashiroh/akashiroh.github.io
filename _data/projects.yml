@@ -18,7 +18,7 @@
         _Manuscript for this work is in preparation for Remote Sensing Journal 2025_
 
     - title: Computational Animal Welfare
-      logo: /assets/imgs/project2-logo.png
+      logo: /assets/imgs/zoo_logo.png
       summary: Collaboration with the Woodland Park Zoo to utilize video object tracking and image object detection to track animal behavior and enclosure usage.
       details: |
         We deploy a variant of Meta AI's SAM2 to track animals via surveillance footage and a fine-tuned YOLO model to detect the initial bounding box of the animal.
