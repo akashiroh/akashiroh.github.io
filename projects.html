@@ -135,8 +135,9 @@ title: Projects
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   cursor: pointer;
-  flex: 1 1 200px; /* min width, grow equally */
-  max-width: 300px; /* optional */
+  flex: 1 1 calc(33.333% - 20px); /* 3 per row max, min 1 per row */
+  max-width: calc(33.333% - 20px);
+  min-width: 200px; /* ensures uniform size across companies */
   box-sizing: border-box;
   transition: all 0.4s ease;
   max-height: 200px;
@@ -179,15 +180,22 @@ title: Projects
   display: block;
 }
 
-/* Ensure cards below the expanded one stay visible */
+/* Move other cards to next row while keeping their dimensions */
 .project-grid.expanded {
-  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.project-grid.expanded .project-card:not(.expanded) {
+  flex: 1 1 calc(33.333% - 20px);
+  max-width: calc(33.333% - 20px);
+  min-width: 200px;
 }
 
 /* Responsive */
 @media (max-width: 800px) {
   .project-card {
     flex: 1 1 100%;
+    max-width: 100%;
   }
 }
 </style>
@@ -198,12 +206,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   grids.forEach(grid => {
     let expandedCard = null;
-    const cards = grid.querySelectorAll('.project-card');
+    const cards = Array.from(grid.querySelectorAll('.project-card'));
 
     cards.forEach(card => {
       card.addEventListener('click', function() {
         if (expandedCard === this) {
-          // minimize current card
+          // minimize current
           this.classList.remove('expanded');
           grid.classList.remove('expanded');
           expandedCard = null;
@@ -216,7 +224,10 @@ document.addEventListener('DOMContentLoaded', function() {
           grid.classList.add('expanded');
           expandedCard = this;
 
-          // scroll smoothly to the expanded card (optional)
+          // reorder: move expanded card to start of grid
+          grid.insertBefore(this, grid.firstChild);
+
+          // smooth scroll to expanded card
           this.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
