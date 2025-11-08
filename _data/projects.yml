@@ -10,7 +10,7 @@
       presentation: https://neurips.cc/virtual/2024/100548
 
     - title: Semantic Segmentation for Archaeology
-      logo: /assets/imgs/project2-logo.png
+      logo: /assets/imgs/arch_logo.png
       summary: Collaboration with Archaeology department at WWU to fine-tune a semantic segmentation model.
       details: |
         We fine-tune te state-of-the-art semantic segmentation model on aerial lidar data for binary classification of pixels. We train on 50m x 50m patches of data on elevation, number of returns, intensity, and relative elevation with varying radii. We are training and computing metrics between our predictions and ground-surveyed data rather than lidar derived data, making this task specifically noisy. We achieve 0.56 F1 score and 0.41 mIoU.
