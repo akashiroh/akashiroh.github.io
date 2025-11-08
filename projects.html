@@ -152,6 +152,7 @@ title: Projects
 </style>
 
 <script>
+<script>
 document.addEventListener('DOMContentLoaded', function() {
   const cards = document.querySelectorAll('.project-card');
 
@@ -159,18 +160,21 @@ document.addEventListener('DOMContentLoaded', function() {
     card.addEventListener('click', function() {
       const isExpanded = this.classList.contains('expanded');
 
-      // Collapse all cards first
-      cards.forEach(c => {
-        c.classList.remove('expanded');
-        c.style.display = ''; // reset display
-      });
+      if (isExpanded) {
+        // Collapse the currently expanded card
+        this.classList.remove('expanded');
 
-      // Expand clicked card if it wasn't already expanded
-      if (!isExpanded) {
-        this.classList.add('expanded');
+        // Wait for the transition to finish before showing other cards
+        this.addEventListener('transitionend', function handler() {
+          cards.forEach(c => c.style.display = '');
+          this.removeEventListener('transitionend', handler);
+        });
+      } else {
+        // Expand clicked card
         cards.forEach(c => {
           if (c !== this) c.style.display = 'none';
         });
+        this.classList.add('expanded');
       }
     });
   });
