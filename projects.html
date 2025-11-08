@@ -154,7 +154,6 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  transition: all 0.4s ease;
   max-width: 100%;
   margin: 0 auto;
 }
@@ -166,8 +165,11 @@ h2 {
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   cursor: pointer;
-  flex: 0 1 calc(50% - 10px);
+
+  /* TWO cards per row on wide screens */
+  flex: 0 1 calc(50% - 10px); /* 50% minus half the gap */
   min-width: 300px;
+
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -176,7 +178,6 @@ h2 {
   max-height: 200px;
   overflow: hidden;
 }
-
 
 .project-card-logo {
   width: 70px;
@@ -218,7 +219,7 @@ h2 {
   display: block;
 }
 
-/* Responsive */
+/* Responsive: 1 card per row on small screens */
 @media (max-width: 800px) {
   .project-card {
     flex: 1 1 100%;
@@ -237,7 +238,6 @@ document.addEventListener('DOMContentLoaded', function() {
   grids.forEach(grid => {
     let expandedCard = null;
     const cards = Array.from(grid.querySelectorAll('.project-card'));
-
     const originalOrder = cards.slice();
 
     cards.forEach(card => {
