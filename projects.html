@@ -14,6 +14,7 @@ title: Projects
   <!-- Project Grid -->
   <div class="project-grid">
     <div class="project-card">
+      <img src="/assets/imgs/project1-logo.png" alt="Project 1 Logo" class="project-card-logo">
       <h3>Project 1</h3>
       <p class="project-summary">Short summary of project 1.</p>
       <div class="project-details">
@@ -22,6 +23,7 @@ title: Projects
     </div>
 
     <div class="project-card">
+      <img src="/assets/imgs/project2-logo.png" alt="Project 2 Logo" class="project-card-logo">
       <h3>Project 2</h3>
       <p class="project-summary">Short summary of project 2.</p>
       <div class="project-details">
@@ -30,18 +32,11 @@ title: Projects
     </div>
 
     <div class="project-card">
+      <img src="/assets/imgs/project3-logo.png" alt="Project 3 Logo" class="project-card-logo">
       <h3>Project 3</h3>
       <p class="project-summary">Short summary of project 3.</p>
       <div class="project-details">
         <p>Detailed information about project 3. Excepteur sint occaecat cupidatat non proident.</p>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <h3>Project 4</h3>
-      <p class="project-summary">Short summary of project 4.</p>
-      <div class="project-details">
-        <p>Detailed information about project 4. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
       </div>
     </div>
   </div>
@@ -81,15 +76,15 @@ title: Projects
 .project-company {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   margin: 0;
-  white-space: nowrap; /* prevent wrapping */
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 /* Project Grid */
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   margin-top: 20px;
 }
@@ -102,17 +97,33 @@ title: Projects
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   cursor: pointer;
-  overflow: hidden;
-  max-height: 200px; /* collapsed height */
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
   transition: all 0.3s ease;
+  max-height: 200px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-start;
 }
 
+/* Project Card Logo */
+.project-card-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* Card Content */
 .project-card h3 {
-  margin-top: 0;
+  margin: 0 0 5px 0;
 }
 
 .project-summary {
-  margin-bottom: 0.5em;
+  margin: 0;
 }
 
 .project-details {
@@ -122,18 +133,26 @@ title: Projects
 
 /* Expanded Card */
 .project-card.expanded {
-  max-height: 500px; /* adjust as needed */
-  grid-column: span 3;
+  flex: 1 1 100%;
+  max-height: 1000px; /* adjust to content */
+  z-index: 1000;
 }
 
+/* Hide other cards when one expands */
+.project-card.expanded ~ .project-card,
+.project-card:not(.expanded) {
+  display: none;
+}
+
+/* Show details when expanded */
 .project-card.expanded .project-details {
   display: block;
 }
 
-/* Responsive tweaks */
+/* Responsive */
 @media (max-width: 800px) {
-  .project-card.expanded {
-    grid-column: span 1; /* mobile: expand to full width of column */
+  .project-card {
+    flex: 1 1 100%;
   }
 }
 </style>
@@ -144,16 +163,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
   cards.forEach(card => {
     card.addEventListener('click', function() {
-      // If already expanded, collapse it
-      if (this.classList.contains('expanded')) {
-        this.classList.remove('expanded');
-      } else {
-        // Collapse all others
-        cards.forEach(c => c.classList.remove('expanded'));
+      const isExpanded = this.classList.contains('expanded');
+
+      // Collapse all cards
+      cards.forEach(c => c.classList.remove('expanded'));
+      cards.forEach(c => c.style.display = '');
+
+      // Expand clicked card if it wasn't already expanded
+      if (!isExpanded) {
         this.classList.add('expanded');
       }
     });
   });
 });
 </script>
-
