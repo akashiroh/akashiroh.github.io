@@ -134,14 +134,8 @@ title: Projects
 /* Expanded Card */
 .project-card.expanded {
   flex: 1 1 100%;
-  max-height: 1000px; /* adjust to content */
+  max-height: 1000px; /* adjust as needed */
   z-index: 1000;
-}
-
-/* Hide other cards when one expands */
-.project-card.expanded ~ .project-card,
-.project-card:not(.expanded) {
-  display: none;
 }
 
 /* Show details when expanded */
@@ -165,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
     card.addEventListener('click', function() {
       const isExpanded = this.classList.contains('expanded');
 
-      // Collapse all cards
+      // Collapse all cards first
       cards.forEach(c => {
         c.classList.remove('expanded');
         c.style.display = ''; // reset display
@@ -181,4 +175,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+</script>
 
