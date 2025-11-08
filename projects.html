@@ -15,37 +15,45 @@ title: Projects
     <div class="project-grid">
       <div class="project-card" data-index="0">
         <img src="/assets/imgs/gcam_logo.png" alt="GCAM" class="project-card-logo">
-        <h3>Emulating the Global Change Analysis Model with Deep Learning</h3>
-        <p class="project-summary">Short summary of project 1.</p>
-        <div class="project-details">
-          <p>Detailed information about project 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="project-card-content">
+          <h3>Emulating the Global Change Analysis Model with Deep Learning</h3>
+          <p class="project-summary">Short summary of project 1.</p>
+          <div class="project-details">
+            <p>Detailed information about project 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
         </div>
       </div>
 
       <div class="project-card" data-index="1">
         <img src="/assets/imgs/project2-logo.png" alt="Archaeology" class="project-card-logo">
-        <h3>Semantic Segmentation for Archaeology</h3>
-        <p class="project-summary">Short summary of project 2.</p>
-        <div class="project-details">
-          <p>Detailed information about project 2. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
+        <div class="project-card-content">
+          <h3>Semantic Segmentation for Archaeology</h3>
+          <p class="project-summary">Short summary of project 2.</p>
+          <div class="project-details">
+            <p>Detailed information about project 2. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
+          </div>
         </div>
       </div>
 
       <div class="project-card" data-index="2">
         <img src="/assets/imgs/project3-logo.png" alt="Zoo" class="project-card-logo">
-        <h3>Computational Animal Welfare</h3>
-        <p class="project-summary">Short summary of project 3.</p>
-        <div class="project-details">
-          <p>Detailed information about project 3. Excepteur sint occaecat cupidatat non proident.</p>
+        <div class="project-card-content">
+          <h3>Computational Animal Welfare</h3>
+          <p class="project-summary">Short summary of project 3.</p>
+          <div class="project-details">
+            <p>Detailed information about project 3. Excepteur sint occaecat cupidatat non proident.</p>
+          </div>
         </div>
       </div>
 
       <div class="project-card" data-index="3">
         <img src="/assets/imgs/project4-logo.png" alt="Toddler" class="project-card-logo">
-        <h3>Automatic Speech Recognition</h3>
-        <p class="project-summary">Short summary of project 4.</p>
-        <div class="project-details">
-          <p>Detailed information about project 4. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="project-card-content">
+          <h3>Automatic Speech Recognition</h3>
+          <p class="project-summary">Short summary of project 4.</p>
+          <div class="project-details">
+            <p>Detailed information about project 4. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -61,40 +69,44 @@ title: Projects
     <div class="project-grid">
       <div class="project-card" data-index="0">
         <img src="/assets/imgs/project5-logo.png" alt="G2P" class="project-card-logo">
-        <h3>Grapheme to Phoneme Translation</h3>
-        <p class="project-summary">Short summary of project 5.</p>
-        <div class="project-details">
-          <p>Detailed information about project 5. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
+        <div class="project-card-content">
+          <h3>Grapheme to Phoneme Translation</h3>
+          <p class="project-summary">Short summary of project 5.</p>
+          <div class="project-details">
+            <p>Detailed information about project 5. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
+          </div>
         </div>
       </div>
 
       <div class="project-card" data-index="1">
         <img src="/assets/imgs/project6-logo.png" alt="Rubiks" class="project-card-logo">
-        <h3>Rubiks Cubot</h3>
-        <p class="project-summary">Short summary of project 6.</p>
-        <div class="project-details">
-          <p>Detailed information about project 6. Excepteur sint occaecat cupidatat non proident.</p>
+        <div class="project-card-content">
+          <h3>Rubiks Cubot</h3>
+          <p class="project-summary">Short summary of project 6.</p>
+          <div class="project-details">
+            <p>Detailed information about project 6. Excepteur sint occaecat cupidatat non proident.</p>
+          </div>
         </div>
       </div>
 
-      <div class="project-card" data-index="1">
+      <div class="project-card" data-index="2">
         <img src="/assets/imgs/project6-logo.png" alt="Bio" class="project-card-logo">
-        <h3>Automated Cell Segmentation</h3>
-        <p class="project-summary">Short summary of project 6.</p>
-        <div class="project-details">
-          <p>Detailed information about project 6. Excepteur sint occaecat cupidatat non proident.</p>
+        <div class="project-card-content">
+          <h3>Automated Cell Segmentation</h3>
+          <p class="project-summary">Short summary of project 7.</p>
+          <div class="project-details">
+            <p>Detailed information about project 7. Excepteur sint occaecat cupidatat non proident.</p>
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 
 </div>
 
 <style>
-
-h2, h3 {
-    font-family: 'Source Code Pro', monospace;
+h2 {
+  font-family: 'Source Code Pro', monospace;
 }
 
 .projects-page {
@@ -140,8 +152,11 @@ h2, h3 {
 .project-grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
   transition: all 0.4s ease;
+  max-width: 95%;
+  margin: 0 auto;
 }
 
 .project-card {
@@ -151,61 +166,56 @@ h2, h3 {
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   cursor: pointer;
-  flex: 1 1 calc(50% - 20px); /* 2 projects per row */
-  max-width: calc(50% - 20px);
-  min-width: 250px;
-  box-sizing: border-box;
+  flex: 1 1 calc(48% - 20px);
+  max-width: calc(48% - 20px);
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
   transition: all 0.4s ease;
   max-height: 200px;
   overflow: hidden;
-  display: flex;
-  flex-direction: row; /* logo left, text right */
-  align-items: flex-start;
-  gap: 15px;
 }
 
 .project-card-logo {
-  width: 100px;  /* bigger logo */
-  height: 100px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
-  border-radius: 6px;
-  flex-shrink: 0;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid #f2e9e4;
 }
 
 .project-card-content {
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
 
 .project-card h3 {
-  margin: 0 0 5px 0;
-}
-
-.project-summary {
   margin: 0;
+  font-size: 1rem;
 }
 
-.project-details {
+.project-summary, .project-details {
   display: none;
-  margin-top: 10px;
+  margin: 0;
+  font-size: 0.9rem;
 }
 
 .project-card.expanded {
   flex: 1 1 100%;
   max-width: 100%;
   max-height: 1000px;
+  flex-direction: row;
+  align-items: flex-start;
   z-index: 1;
-  flex-direction: column; /* stacked when expanded */
 }
 
+.project-card.expanded .project-summary,
 .project-card.expanded .project-details {
   display: block;
-}
-
-.project-grid.expanded .project-card:not(.expanded) {
-  flex: 1 1 calc(50% - 20px);
-  max-width: calc(50% - 20px);
-  min-width: 250px;
 }
 
 /* Responsive */
@@ -213,7 +223,6 @@ h2, h3 {
   .project-card {
     flex: 1 1 100%;
     max-width: 100%;
-    flex-direction: row;
   }
   .project-card.expanded {
     flex-direction: column;
@@ -229,33 +238,23 @@ document.addEventListener('DOMContentLoaded', function() {
     let expandedCard = null;
     const cards = Array.from(grid.querySelectorAll('.project-card'));
 
-    // Save original order
     const originalOrder = cards.slice();
 
     cards.forEach(card => {
       card.addEventListener('click', function() {
         if (expandedCard === this) {
-          // minimize current
           this.classList.remove('expanded');
           grid.classList.remove('expanded');
-
-          // restore original order
           originalOrder.forEach(c => grid.appendChild(c));
-
           expandedCard = null;
         } else {
-          // collapse previous
           if (expandedCard) expandedCard.classList.remove('expanded');
 
-          // expand new card
           this.classList.add('expanded');
           grid.classList.add('expanded');
           expandedCard = this;
 
-          // move expanded card to top
           grid.insertBefore(this, grid.firstChild);
-
-          // smooth scroll to expanded card
           this.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
