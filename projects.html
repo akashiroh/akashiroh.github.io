@@ -205,10 +205,10 @@ h2 {
 }
 
 .project-card.expanded {
-  flex: 1 1 100%;
-  max-width: 100%;
+  grid-column: 1 / -1; /* span all columns */
   max-height: 1000px;
-  flex-direction: row;
+  display: flex;
+  flex-direction: row; /* keep your side-by-side logo + content */
   align-items: flex-start;
   z-index: 1;
 }
