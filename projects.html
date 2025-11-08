@@ -19,10 +19,10 @@ a.hover, a.focus {
 .about-block {
   display: flex;
   align-items: flex-start;
-  gap: 30px;
   max-width: 70%;
   margin: 60px auto;
-  padding: 40px;
+  gap: 15px;
+  padding: 20px;
   color: white;
   background-color: #726d80;
   opacity: 0.85;
@@ -31,11 +31,11 @@ a.hover, a.focus {
 }
 
 .about-block h2 {
-  font-size: 42px;
+  font-size: clamp(1rem, 2.5vw, 38px);
 }
 
 .about-block p {
-  font-size: 28px;
+  font-size: clamp(1rem, 2.5vw, 26px);
 }
 
 .about-img {
@@ -50,7 +50,6 @@ a.hover, a.focus {
 }
 
 .about-text p {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
   line-height: 1.6;
   margin-bottom: 1em;
 }
