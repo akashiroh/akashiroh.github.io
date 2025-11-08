@@ -17,7 +17,7 @@ title: Projects
             <img src="{{ project.logo }}" alt="{{ project.title }}" class="project-card-logo">
             <div class="project-card-content">
               <h3>{{ project.title }}</h3>
-              <p class="project-summary">{{ project.summary }}</p>
+              <p class="project-summary">{{ project.summary | markdownify }}</p>
               <div class="project-details"><p>{{ project.details | markdownify}}</p></div>
 
               <div class="project-buttons">
@@ -77,6 +77,7 @@ h2 { font-family: 'Source Code Pro', monospace; }
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
+  font-weight: bold;
   text-overflow: ellipsis;
 }
 
