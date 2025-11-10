@@ -13,7 +13,7 @@
       logo: /assets/imgs/arch_logo.png
       summary: Collaboration with Archaeology department at WWU to fine-tune a semantic segmentation model.
       details: |
-        We fine-tune te state-of-the-art semantic segmentation model on aerial lidar data for binary classification of pixels. We train on 50m x 50m patches of data on elevation, number of returns, intensity, and relative elevation with varying radii. We are training and computing metrics between our predictions and ground-surveyed data rather than lidar derived data, making this task specifically noisy. We achieve 0.56 F1 score and 0.41 mIoU.
+        We fine-tune a state-of-the-art semantic segmentation model on aerial lidar data for binary classification of pixels. We train on 50m x 50m patches of data including {elevation, number of returns, intensity, and relative elevation with varying radii}. We are training and computing metrics between our predictions and ground-surveyed data rather than lidar derived data, making this task specifically noisy. We achieve 0.56 F1 score and 0.41 mIoU, comparable to other experiments in this field.
 
         _Manuscript for this work is in preparation for Remote Sensing Journal 2025_
 
@@ -38,7 +38,7 @@
     - title: Automated Cell Segmentation
       logo: /assets/imgs/bio_logo.png
       summary: WWU CSCI 597K -- Bioinformatics; Use computer vision to detect organelles from stained cellular scans
-      details: INSERT TEXT ABOUT THIS HERE.
+      details: This was a group project in collaboration with the Biology Department to use classical computer vision techniques to segment cell structures and perform inference on the results. Our method included selection of the "sharpest" image of the cells, adaptive thresholding for intensity to single out the desired cell structures, drawing a contour around the pixels, and matching up selected cell structures between channels. We segmented for the Golgi Apparatus, Cilia, and Cilia base; if all three of these structures were detected in a cell, then we would compute and report the distance between the center of mass of the Golgi Apparatus to the base of the Cilia. This was not a predictive task and so we do not have accuracy metrics.
       github: https://github.com/Diego-Llanes/markingcellstructures
 
     - title: Rubiks Cubot
