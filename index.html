@@ -16,7 +16,7 @@ a:hover, a:focus {
     color: #0056b3;
 }
 
-.about-block {
+.text-block {
   align-items: flex-start;
   gap: 30px;
   max-width: 80%;
@@ -30,7 +30,7 @@ a:hover, a:focus {
   overflow: auto;
 }
 
-.about-img {
+.profile-img {
   float: left;
   width: 360px;
   height: 360px;
@@ -42,39 +42,65 @@ a:hover, a:focus {
   margin: 0 25px 25px 0;
 }
 
-.about-text {
+.block-text {
   flex: 1;
 }
 
-.about-text h2 {
+.block-text h2 {
   font-size: 2.5rem;
   margin: 0 0 15px 0;
 }
 
-.about-text p {
+.block-text p {
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 1em;
 }
-.about-text p:last-child {
+.block-text p:last-child {
   margin-bottom: 0;
+}
+
+.image-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  max-width: 90%;
+}
+
+.image-row img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.divider {
+  width: 90%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 30px auto;
+  border: none;
 }
 
 /* Responsive: stack vertically on smaller screens */
 @media (max-width: 700px) {
-  .about-block {
+  .text-block {
     flex-direction: column;
     text-align: left;
   }
 
-  .about-block h2 {
+  .text-block h2 {
     font-size: 1.4em;
   }
-  .about-block p {
+  .text-block p {
     font-size: 0.9em;
   }
 
-  .about-img {
+  .profile-img {
     width: 230px;
     height: 230px;
     margin-bottom: 20px;
@@ -82,21 +108,18 @@ a:hover, a:focus {
 }
 </style>
 
-<div class="about-block">
-    <img src="/assets/imgs/profile.png" alt="Profile Photo" class="about-img">
-    <div class="about-text">
-        <h2>hello world ...</h2>
-        <p>
-	    I'm Andrew Holmes, a {machine learning researcher, data scientist, ai engineer}, specializing in application-driven machine learning. I am currently a graduate research assistant and teaching assistant at Western Washington University finishing up my Master's in Computer Science.
-	    I'm Andrew Holmes, a {machine learning researcher, data scientist, ai engineer}, specializing in application-driven machine learning. I am currently a graduate research assistant and teaching assistant at Western Washington University finishing up my Master's in Computer Science.
-	    I'm Andrew Holmes, a {machine learning researcher, data scientist, ai engineer}, specializing in application-driven machine learning. I am currently a graduate research assistant and teaching assistant at Western Washington University finishing up my Master's in Computer Science.
-	</p>
-        <p>
-            My main focus of research has been in developing deep learning-based climate emulators, decreasing the compute necessary to explore spatial and temporal dynamics between climate and economic sectors. Check out my <a href="/projects">projects</a> to explore what else I have been up to.
-	    I'm Andrew Holmes, a {machine learning researcher, data scientist, ai engineer}, specializing in application-driven machine learning. I am currently a graduate research assistant and teaching assistant at Western Washington University finishing up my Master's in Computer Science.
-        </p>
-        <p>
-            When I am away from the keyboard, I enjoy {rock climbing, hiking/camping, outrigger paddling, reading, playing board games}.
-        </p>
+<div class="text-block">
+    <img src="/assets/imgs/profile.png" alt="Profile Photo" class="profile-img">
+    <div class="text-block">
+        <h2>Hey there, I'm Andrew Holmes<h2>
+        <div class="image-row">
+            <img src="/assets/imgs/python-logo-1.png" alt="">
+            <img src="/assets/imgs/pytorch-logo-1.png" alt="">
+            <img src="/assets/imgs/unix-logo-1.png" alt="">
+            <img src="/assets/imgs/numpy-logo-1.png" alt="">
+            <img src="/assets/imgs/pandas-logo-1.png" alt="">
+            <img src="/assets/imgs/opencv-logo-1.png" alt="">
+        </div>
     </div>
+    <div class="divider"></div>
 </div>
