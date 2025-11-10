@@ -67,8 +67,9 @@ body, h1, h2 {
 
 /* Header navigation */
 #topnav {
-    opacity: 0.5;
-    background-color: #f2e9e4;
+    opacity: 0.85;
+    /* background-color: #f2e9e4; */
+    background-color: rgba(242, 233, 228, 0.5);
     color: white;
     padding: 15px 20px;
     display: flex;
