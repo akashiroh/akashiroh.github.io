@@ -2,3 +2,6 @@ title: "Andrew Holmes"
 description: "portfolio"
 baseurl: "" # Leave blank for GitHub Pages
 url: "https://akashiroh.github.io"
+collections:
+  publications:
+    output: true
