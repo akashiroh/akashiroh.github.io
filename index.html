@@ -170,38 +170,15 @@ a:hover, a:focus {
     <div class="divider"></div>
 
     <h2>Publications</h2>
+    <ul>
+      {% for pub in site.publications %}
+        <li>
+          <strong>{{ pub.title }}</strong> — {{ pub.authors }} ({{ pub.year }})
+          <a href="{{ pub.link }}">[Link]</a><br>
+          {{ pub.content }}
+        </li>
+      {% endfor %}
+    </ul>
 
-    <script src="https://cdn.jsdelivr.net/npm/bibtex-js@2.0.0/dist/bibtex.min.js"></script>
-    <script type="text/bibtex">
-    @misc{holmes2024emulatingglobalchangeanalysis,
-      title={Emulating the Global Change Analysis Model with Deep Learning},
-      author={Andrew Holmes and Matt Jensen and Sarah Coffland and Hidemi Mitani Shen and Logan Sizemore and Seth Bassetti and Brenna Nieva and Claudia Tebaldi and Abigail Snyder and Brian Hutchinson},
-      year={2024},
-      eprint={2412.08850},
-      archivePrefix={arXiv},
-      primaryClass={econ.GN},
-      url={https://arxiv.org/abs/2412.08850},
-    }
-    </script>
-
-    <div class="bibtex_display"></div>
-    <script>
-        function highlightAuthor(name) {
-          document.querySelectorAll(".bibtex_display").forEach(div => {
-            const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-            const pattern = new RegExp(`\\b${escaped}\\b`, "g");
-            div.innerHTML = div.innerHTML.replace(
-              pattern,
-              `<u><strong>${name}</strong></u>`
-            );
-          });
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-          setTimeout(() => {
-            highlightAuthor("Andrew Holmes");
-          }, 400);
-        });
-    </script>
 
 </div>
