@@ -170,14 +170,27 @@ a:hover, a:focus {
     <div class="divider"></div>
 
     <h2>Publications</h2>
-    <p style="font-size: 1.2em; margin-bottom: 0.1;">
-    <b>Emulating the Global Change Analysis Model with Deep Learning</b>
-    </p>
-    <p style="font-size: 1em; margin-bottom: 0.1;">
-    <u><b>Andrew Holmes</b></u>, Matt Jensen, Sarah Coffland, Hidemi Mitani-Shen, Logan Sizemore, Seth Bassetti, Brenna Nieva, Claudia Tebaldi, Abigail Snyder, Brian Hutchinson
-    </p>
-    <p style="font-size: 1em; margin-bottom: 0.1;">
-    <i>Tackling Climate Change with Machine Learning Workshop at NeurIPS, 2024</i>
-    </p>
+
+    <script src="https://cdn.jsdelivr.net/npm/bibtex-js@2.0.0/dist/bibtex.min.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".bibtex_display").forEach(div => {
+        div.innerHTML = div.innerHTML.replace(/Jane Doe/g, "<u><strong>Jane Doe</strong></u>");
+      });
+    });
+    </script>
+    <script type="text/bibtex">
+      @misc{holmes2024emulatingglobalchangeanalysis,
+          title={Emulating the Global Change Analysis Model with Deep Learning},
+          author={Andrew Holmes and Matt Jensen and Sarah Coffland and Hidemi Mitani Shen and Logan Sizemore and Seth Bassetti and Brenna Nieva and Claudia Tebaldi and Abigail Snyder and Brian Hutchinson},
+          year={2024},
+          eprint={2412.08850},
+          archivePrefix={arXiv},
+          primaryClass={econ.GN},
+          url={https://arxiv.org/abs/2412.08850},
+    }
+    </script>
+
+    <div class="bibtex_display"></div>
 
 </div>
