@@ -170,13 +170,15 @@ a:hover, a:focus {
     <div class="divider"></div>
 
     <h2>Publications</h2>
+    {% for pub in site.data.publications %}
     <li>
       <strong>{{ pub.title }}</strong><br>
       {{ pub.authors | markdownify }}<br>
       <em>{{ pub.year }}</em><br>
       {% if pub.url %}
-        <a href="{{ pub.url }}" target="_blank">Link</a>
+        <a href="{{ pub.url }}" target="_blank">arXiv</a>
       {% endif %}
     </li>
+    {% endfor %}
 
 </div>
