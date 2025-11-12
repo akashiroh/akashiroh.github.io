@@ -99,25 +99,22 @@ a:hover, a:focus {
 
 
 .publication {
-    background-color: rgba(242, 233, 228, 0.8);
+    background-color: rgba(242, 233, 228, 0.5);
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     padding: 20px 25px;
     margin-bottom: 25px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .paper-title {
-    font-size: 1.6;
+    font-size: 1.8em;
     font-weight: 750;
     color: black;
     margin-bottom: 6px;
+    transition: color 0.2s ease, font-weight 0.2s ease;
 }
-.paper-title:hover {
-    font-size: 1.6;
-    font-weight: 750;
+.publication:hover .paper-title{
     color: #457b9d;
-    margin-bottom: 6px;
 }
 
 .authors {
