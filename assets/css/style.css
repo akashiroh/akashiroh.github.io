@@ -185,11 +185,11 @@ body, h1, h2 {
         align-items: center;
         padding: 10px 0;
     }
-    
+
     #bottomnav .footer-text {
         display: none;
     }
-    
+
     #bottomnav .nav-links {
         position: relative;
         display: flex;
