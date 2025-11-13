@@ -60,7 +60,7 @@ a:hover, a:focus {
 }
 
 .bio p {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #333;
   margin: 6px 0;
 }
@@ -76,14 +76,17 @@ a:hover, a:focus {
 }
 
 .social-links a {
-  color: #726d80;
+  color: #457b9d;
+  font-weight: bold;
+  border: 2px solid #457b9d;
   font-size: 1.6rem;
   text-decoration: none;
-  transition: color 0.2s ease, transform 0.1s ease;
+  transition: all 0.2s ease, transform 0.1s ease;
 }
 
 .social-links a:hover {
-  color: #457b9d;
+  color: white;
+  background-color: #457b9d;
   transform: translateY(-2px);
 }
 
@@ -264,7 +267,7 @@ a:hover, a:focus {
       <div class="paper-title">Grapheme to Phoneme Machine Translation</div>
       <div class="authors"><em>CSCI 481 — Deep Learning</em></div>
       <div class="publication-info">
-        Trained a bi-directional GRU model on English grapheme-phoneme pairs to better encode pronunciation patterns, achieving a 9.89% word (phoneme) error rate — second-best in a class of 35+ students.
+        Trained a bi-directional GRU model on English grapheme-phoneme pairs to better encode pronunciation patterns, achieving a 9.89% word (phoneme) error rate; second-best performance in a class of 35+ students.
       </div>
       <div class="buttons">
         <a href="/assets/imgs/g2p_report.pdf">report</a>
@@ -275,7 +278,7 @@ a:hover, a:focus {
       <div class="paper-title">GCAMnet</div>
       <div class="authors"><em>Collaboration with the Joint Global Change Research Institute and Pacific Northwest National Lab</em></div>
       <div class="publication-info">
-        We explore GCAM ensemble designs by training a neural network to emulate two case studies (<em>renewable energy</em>, <em>food scarcity</em>), reducing required simulation data by 50%. The emulator efficiently discovers optimal input configurations for desirable climate futures.
+        We explore GCAM ensemble designs by training a neural network to emulate two case studies {<em>renewable energy</em>, <em>food scarcity</em>}, reducing required simulation data by 50%. This emulator can be used to (1) identify regions in the input space of high uncertainty to efficiently sample a training dataset and (2) discover an optimal set of inputs that maximizes/minimizes select outputs.
       </div>
       <div class="buttons">
         <a href="https://github.com/hutchresearch/GCAMnet">GitHub</a>
@@ -287,7 +290,7 @@ a:hover, a:focus {
       <div class="paper-title">Mayapán Structure Semantic Segmentation</div>
       <div class="authors"><em>Collaboration with the Archaeology Department</em></div>
       <div class="publication-info">
-        Fine-tuned a semantic segmentation model on aerial lidar data for binary pixel classification. Training on 50m × 50m patches (elevation, returns, intensity, relative elevation) achieved 0.56 F1 and 0.41 mIoU — in line with other work in this domain.
+        Fine-tuned a semantic segmentation model on aerial lidar data for binary pixel classification. Training on 50m × 50m patches with 11 channels {elevation, returns, intensity, varying relative elevation} achieved 0.56 F1 and 0.41 mIoU. Our targets are ground surveyed instead of lidar-derived, making this task harder than other works in this field.
       </div>
     </div>
 
@@ -300,7 +303,7 @@ a:hover, a:focus {
         <u><b>Andrew Holmes</b></u>, Matt Jensen, Sarah Coffland, Hidemi Mitani Shen, Logan Sizemore, Seth Bassetti, Brenna Nieva, Claudia Tebaldi, Abigail Snyder, Brian Hutchinson
       </div>
       <div class="publication-info">
-        Tackling Climate Change with Machine Learning Workshop, NeurIPS, <em>2024</em>
+        <em>Tackling Climate Change with Machine Learning Workshop, NeurIPS, 2024</em>
       </div>
       <div class="buttons">
         <a href="https://arxiv.org/abs/2412.08850">arXiv</a>
