@@ -6,69 +6,125 @@ title: Andrew Holmes
 <style>
 
 a {
-    <!-- color: #007bff; -->
-    font-weight: bold;
-    text-decoration: underline;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 a:hover, a:focus {
-    text-decoration: underline;
-    color: #0056b3;
+  text-decoration: underline;
+  color: #0056b3;
 }
 
-.text-block {
-  text-align: left;
-  gap: 30px;
-  max-width: 75%;
+
+
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
   margin: 60px auto;
-  padding: 40px;
-  color: black;
-  background-color: rgba(242, 233, 228, 0.85);
-  opacity: 0.95;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  overflow: auto;
+  gap: 50px;
+  padding: 20px;
 }
 
-.profile-img {
-  float: left;
-  width: 420px;
-  height: 420px;
+
+
+.left-column {
+  flex: 0 0 320px;
+  background-color: rgba(242, 233, 228, 0.85);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  padding: 25px;
+  text-align: center;
+}
+
+.left-column .profile-img {
+  width: 100%;
+  height: auto;
   border-radius: 8px;
   object-fit: cover;
   border: 4px solid #457b9d;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  align-self: flex-start;
-  margin: 0 25px 25px 0;
+  margin-bottom: 20px;
 }
 
-.block-text {
+.bio h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: "Source Code Pro", monospace;
+}
+
+.bio p {
+  font-size: 1rem;
+  color: #333;
+  margin: 6px 0;
+}
+
+.social-links {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: #726d80;
+  font-size: 1.6rem;
+  transition: color 0.2s ease, transform 0.1s ease;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #457b9d;
+  transform: translateY(-2px);
+}
+
+
+
+.right-column {
   flex: 1;
+  background-color: rgba(242, 233, 228, 0.85);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  color: black;
 }
 
-.text-block h1 {
+.right-column h1 {
   text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
   margin: 0 0 30px 0;
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Source Code Pro", monospace;
 }
 
-.text-block h2 {
-  font-size: 2.0rem;
+.right-column h2 {
+  font-size: 2rem;
   margin: 0 0 15px 0;
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Source Code Pro", monospace;
 }
 
-.text-block p {
-  align-items: left;
+.right-column p {
   font-size: 1.2rem;
-  line-height: 1.3;
+  line-height: 1.4;
   margin-bottom: 1em;
 }
-.text-block p:last-child {
-  margin-bottom: 0;
+
+
+
+.divider {
+  width: 90%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: 30px auto;
+  border: none;
 }
+
+
 
 .image-row {
   display: flex;
@@ -86,186 +142,226 @@ a:hover, a:focus {
   background-color: #f0efeb;
   object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.divider {
-  width: 90%;
-  height: 1px;
-  background-color: rgba(0, 0, 0, 0.3);
-  margin: 30px auto;
-  border: none;
-}
+
 
 
 .publication {
-    background-color: rgba(242, 233, 228, 0.25);
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    padding: 20px 25px;
-    margin-bottom: 25px;
+  background-color: rgba(242, 233, 228, 0.25);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px 25px;
+  margin-bottom: 25px;
 }
 
 .paper-title {
-    font-size: 1.4em;
-    font-weight: 750;
-    color: black;
-    margin-bottom: 6px;
-    transition: color 0.2s ease, font-weight 0.2s ease;
+  font-size: 1.4em;
+  font-weight: 750;
+  color: black;
+  margin-bottom: 6px;
+  transition: color 0.2s ease, font-weight 0.2s ease;
 }
-.publication:hover .paper-title{
-    color: #457b9d;
+.publication:hover .paper-title {
+  color: #457b9d;
 }
 
 .authors {
-    font-size: 0.95em;
-    color: black;
-    margin-bottom: 4px;
+  font-size: 0.95em;
+  color: black;
+  margin-bottom: 4px;
 }
 
 .publication-info {
-    font-size: 1em;
-    color: black;
-    margin-bottom: 12px;
+  font-size: 1em;
+  color: black;
+  margin-bottom: 12px;
 }
 
 .buttons {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .buttons a {
-    text-decoration: none;
-    padding: 6px 14px;
-    border-radius: 6px;
-    font-size: 0.9em;
-    font-weight: 500;
-    color: white;
-    background-color: #726d80;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: white;
+  background-color: #726d80;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .buttons a:hover {
-    background-color: #457b9d;
-    transform: translateY(-1px);
+  background-color: #457b9d;
+  transform: translateY(-1px);
 }
 
-/* Responsive: stack vertically on smaller screens */
-@media (max-width: 700px) {
-  .text-block {
+
+
+
+@media (max-width: 900px) {
+  .profile-container {
     flex-direction: column;
-    text-align: left;
     align-items: center;
   }
 
-  .text-block h2 {
-    font-size: 1.6em;
-  }
-  .text-block p {
-    font-size: 0.8em;
+  .left-column,
+  .right-column {
+    width: 100%;
   }
 
-  .profile-img {
-    width: 230px;
-    height: 230px;
-    margin-bottom: 20px;
+  .right-column p {
+    font-size: 1rem;
   }
 
   .image-row img {
-    width: 50px;
-    height: 50px;
-    background-color: #f0efeb;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    width: 60px;
+    height: 60px;
   }
 }
 </style>
 
-<div class="text-block">
-    <img src="/assets/imgs/profile1.jpg" alt="Profile Photo" class="profile-img">
+
+
+
+
+
+<div class="profile-container">
+
+  <div class="left-column">
+
+    <img src="/assets/imgs/profile1.jpg" alt="Profile Photo" class="profile-img"/>
+
+    <div class="bio">
+
+      <div class="social-links">
+        <a href="https://github.com/andrew-holmes" target="_blank"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/andrewholmes" target="_blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="https://scholar.google.com/citations?hl=en&user=mQYtXGMAAAAJ"
+          ><i class="fas fa-graduation-cap"></i
+        ></a>
+      </div>
+
+      <h2>Andrew Holmes</h2>
+      <p><i class="fa-solid fa-map-marker-alt">Bellingham, WA</p>
+      <p>
+        <b>Position:</b> Graduate Research Assistant<br/>
+        Western Washington University<br/>
+        Machine Learning • Deep Learning • NLP
+      </p>
+
+    </div>
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="right-column">
     <h1>Welcome to my website!</h1>
     <p>
-    I'm <b>Andrew Holmes</b>, a {machine learning researcher, data scientist, ai engineer}, specializing in application-driven machine learning. I am currently a <b>graduate research assistant</b> and teaching assistant at Western Washington University finishing up my Master's in Computer Science.
+      I'm <b>Andrew Holmes</b>, a machine learning researcher, data scientist,
+      and AI engineer specializing in application-driven machine learning. I am
+      currently a <b>graduate research assistant</b> and teaching assistant at
+      Western Washington University finishing up my Master's in Computer
+      Science.
     </p>
+
     <p>
-    My main focus of research has been in developing deep learning-based <b>climate emulators</b>, decreasing the compute necessary to explore spatial and temporal dynamics between climate and economic sectors.
-    I also have experience in natural language processing, deploying and finetuning state-of-the-art models, and computer vision.
-    <!-- check out my <a href="/projects">projects</a> to explore what else I have been up to. -->
+      My main focus of research has been in developing deep learning-based
+      <b>climate emulators</b>, decreasing the compute necessary to explore
+      spatial and temporal dynamics between climate and economic sectors. I also
+      have experience in natural language processing, deploying and finetuning
+      state-of-the-art models, and computer vision.
     </p>
-    <!-- <p> -->
-    <!-- Check out the rest of this page for select <b>highlights</b> and my other pages for more information about who I am, my experience, and my other projects. -->
-    <!-- <!-1- Feel free to reach out to me via any of my <a href="/contact">contacts</a> to get in touch! -1-> -->
-    <!-- </p> -->
 
     <div class="divider"></div>
 
     <div class="image-row">
-        <img src="/assets/imgs/python-logo-1.png" alt="">
-        <img src="/assets/imgs/pytorch-logo.png" alt="">
-        <img src="/assets/imgs/unix-shell-logo-1.png" alt="">
-        <img src="/assets/imgs/numpy-logo-1.png" alt="">
-        <img src="/assets/imgs/pandas-logo-2.png" alt="">
-        <img src="/assets/imgs/opencv-logo-1.png" alt="">
-        <img src="/assets/imgs/git.png" alt="">
+      <img src="/assets/imgs/python-logo-1.png" alt="" />
+      <img src="/assets/imgs/pytorch-logo.png" alt="" />
+      <img src="/assets/imgs/unix-shell-logo-1.png" alt="" />
+      <img src="/assets/imgs/numpy-logo-1.png" alt="" />
+      <img src="/assets/imgs/pandas-logo-2.png" alt="" />
+      <img src="/assets/imgs/opencv-logo-1.png" alt="" />
+      <img src="/assets/imgs/git.png" alt="" />
     </div>
 
     <div class="divider"></div>
 
     <h2>Projects</h2>
     <div class="publication">
-        <div class="paper-title">
-            Grapheme to Phoneme Machine Translation
-        </div>
-        <div class="authors"><em>CSCI 481 -- Deep Learning</em></div>
-        <div class="publication-info">
-            This project was a part of a group assignment in the Deep Learning course at Western Washington University. Each group member had their own task to complete and compete against the rest of the class. I trained a bi-directional GRU model on English grapheme-phoneme pairs to better encode the relationship that neighboring letters create when pronounced. I was able to achieve 9.89% word (phoneme) error rate, making this the second best performance in a class of 35+ students.
-        </div>
-        <div class="buttons">
-            <a href="/assets/imgs/g2p_report.pdf">report</a>
-        </div>
+      <div class="paper-title">Grapheme to Phoneme Machine Translation</div>
+      <div class="authors"><em>CSCI 481 — Deep Learning</em></div>
+      <div class="publication-info">
+        This project was part of a Deep Learning course at Western Washington
+        University. I trained a bi-directional GRU model on English
+        grapheme-phoneme pairs to better encode pronunciation patterns,
+        achieving a 9.89% word (phoneme) error rate — second-best in a class of
+        35+ students.
+      </div>
+      <div class="buttons">
+        <a href="/assets/imgs/g2p_report.pdf">report</a>
+      </div>
     </div>
+
     <div class="publication">
-        <div class="paper-title">
-            GCAMnet
-        </div>
-        <div class="authors"><em>Collaboration with the Joint Global Change Research Institue and Pacific Northwest National Lab</em></div>
-        <div class="publication-info">
-            We explore two GCAM ensemble designs, {<em>renewable energy</em>, <em>food scarcity</em>}, by training a neural network to emulate each case study. We explore the relationship between training samples and maximum model generalizability to limit the upfront compute needed to run GCAM simulations to produce the training data, decreasing the training sample necessary by 50%. This efficient emulator is used to discover the optimal training dataset by sampling the most uncertain regions of the input space, further decreasing training samples needed, and is used to discover the optimal input configuration that yields desirable climate futures.
-        </div>
-        <div class="buttons">
-            <a href="https://github.com/hutchresearch/GCAMnet">Github</a>
-            <a href="https://arxiv.org/abs/2412.08850">arXiv</a>
-        </div>
+      <div class="paper-title">GCAMnet</div>
+      <div class="authors">
+        <em
+          >Collaboration with the Joint Global Change Research Institute and
+          Pacific Northwest National Lab</em
+        >
+      </div>
+      <div class="publication-info">
+        We explore GCAM ensemble designs by training a neural network to emulate
+        two case studies (<em>renewable energy</em>, <em>food scarcity</em>),
+        reducing required simulation data by 50%. The emulator efficiently
+        discovers optimal input configurations for desirable climate futures.
+      </div>
+      <div class="buttons">
+        <a href="https://github.com/hutchresearch/GCAMnet">GitHub</a>
+        <a href="https://arxiv.org/abs/2412.08850">arXiv</a>
+      </div>
     </div>
+
     <div class="publication">
-        <div class="paper-title">
-            Mayapán Structure Semantic Segmentation
-        </div>
-        <div class="authors"><em>Collaboration with the Archaeology Department</em></div>
-        <div class="publication-info">
-            We fine-tune a state-of-the-art semantic segmentation model on aerial lidar data for binary classification of pixels. We train on 50m x 50m patches of data including {elevation, number of returns, intensity, and relative elevation with varying radii}. We are training and computing metrics between our predictions and ground-surveyed data rather than lidar derived data, making this task specifically noisy. We achieve 0.56 F1 score and 0.41 mIoU, comparable to other experiments in this field.
-        </div>
+      <div class="paper-title">Mayapán Structure Semantic Segmentation</div>
+      <div class="authors"><em>Collaboration with the Archaeology Department</em></div>
+      <div class="publication-info">
+        Fine-tuned a semantic segmentation model on aerial lidar data for binary
+        pixel classification. Training on 50m × 50m patches (elevation, returns,
+        intensity, relative elevation) achieved 0.56 F1 and 0.41 mIoU — in line
+        with other work in this domain.
+      </div>
     </div>
 
     <div class="divider"></div>
 
     <h2>Selected Publications</h2>
     <div class="publication">
-        <div class="paper-title">
-            Emulating the Global Change Analysis Model with Deep Learning
-        </div>
-        <div class="authors">
-            <u><b>Andrew Holmes</b></u>, Matt Jensen, Sarah Coffland, Hidemi Mitani Shen, Logan Sizemore, Seth Bassetti , Brenna Nieva, Claudia Tebaldi, Abigail Snyder, Brian Hutchinson
-        </div>
-        <div class="publication-info">
-            Tackling Climate Change with Machine Learning Workshop, NeurIPS, <em>2024</em>
-        </div>
-        <div class="buttons">
-            <a href="https://arxiv.org/abs/2412.08850">arXiv</a>
-            <a href="https://neurips.cc/virtual/2024/100548">neurips</a>
-        </div>
+      <div class="paper-title">
+        Emulating the Global Change Analysis Model with Deep Learning
+      </div>
+      <div class="authors">
+        <u><b>Andrew Holmes</b></u>, Matt Jensen, Sarah Coffland, Hidemi Mitani
+        Shen, Logan Sizemore, Seth Bassetti, Brenna Nieva, Claudia Tebaldi,
+        Abigail Snyder, Brian Hutchinson
+      </div>
+      <div class="publication-info">
+        Tackling Climate Change with Machine Learning Workshop, NeurIPS,
+        <em>2024</em>
+      </div>
+      <div class="buttons">
+        <a href="https://arxiv.org/abs/2412.08850">arXiv</a>
+        <a href="https://neurips.cc/virtual/2024/100548">neurips</a>
+      </div>
     </div>
-
+  </div>
 </div>
