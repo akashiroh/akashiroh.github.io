@@ -221,13 +221,44 @@ a:hover, a:focus {
     <div class="divider"></div>
 
     <h2>Projects</h2>
-    <p>
-    <b>GCAMnet:</b>
-    </p>
-
-    <p>
-    <b>Grapheme to Phoneme Machine Translation:</b>
-    </p>
+    <div class="publication">
+        <div class="paper-title">
+            Grapheme to Phoneme Machine Translation
+        </div>
+        <div class="authors"><em>CSCI 481 -- Deep Learning</em></div>
+        <div class="publication-info">
+            This project was a part of a group assignment in the Deep Learning course at Western Washington University. Each group member had their own task to complete and compete against the rest of the class. I trained a bi-directional GRU model on English grapheme-phoneme pairs to better encode the relationship that neighboring letters create when pronounced. I was able to achieve 9.89% word (phoneme) error rate, making this the second best performance in a class of 35+ students.
+        </div>
+        <div class="buttons">
+            <a href="/assets/imgs/g2p_report.pdf">report</a>
+        </div>
+    </div>
+    <div class="publication">
+        <div class="paper-title">
+            GCAMnet
+        </div>
+        <div class="authors"><em>Collaboration with the Joint Global Change Research Institue and Pacific Northwest National Lab</em></div>
+        <div class="publication-info">
+            We explore two GCAM ensemble designs, {<em>renewable energy</em>, <em>food scarcity</em>}, by training a neural network to emulate each case study. We explore the relationship between training samples and maximum model generalizability to limit the upfront compute needed to run GCAM simulations to produce the training data, decreasing the training sample necessary by 50%. This efficient emulator is used to discover the optimal training dataset by sampling the most uncertain regions of the input space, further decreasing training samples needed, and is used to discover the optimal input configuration that yields desirable climate futures.
+        </div>
+        <div class="buttons">
+            <a href="https://github.com/hutchresearch/GCAMnet">Github</a>
+            <a href="https://arxiv.org/abs/2412.08850">arXiv</a>
+        </div>
+    </div>
+    <div class="publication">
+        <div class="paper-title">
+            Mayapán Structure Semantic Segmentation
+        </div>
+        <div class="authors"><em>Collaboration with the Archaeology Department</em></div>
+        <div class="publication-info">
+            We fine-tune a state-of-the-art semantic segmentation model on aerial lidar data for binary classification of pixels. We train on 50m x 50m patches of data including {elevation, number of returns, intensity, and relative elevation with varying radii}. We are training and computing metrics between our predictions and ground-surveyed data rather than lidar derived data, making this task specifically noisy. We achieve 0.56 F1 score and 0.41 mIoU, comparable to other experiments in this field.
+        </div>
+        <div class="buttons">
+            <a href="https://github.com/hutchresearch/GCAMnet">Github</a>
+            <a href="https://arxiv.org/abs/2412.08850">arXiv</a>
+        </div>
+    </div>
 
     <div class="divider"></div>
 
@@ -241,10 +272,6 @@ a:hover, a:focus {
         </div>
         <div class="publication-info">
             Tackling Climate Change with Machine Learning Workshop, NeurIPS, <em>2024</em>
-        </div>
-        <div class="buttons">
-            <a href="https://arxiv.org/abs/2412.08850">arXiv</a>
-            <a href="https://neurips.cc/virtual/2024/100548">neurips</a>
         </div>
     </div>
 
