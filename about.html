@@ -19,13 +19,14 @@ a:hover, a:focus {
 .about-block {
   display: flex;
   align-items: flex-start;
+  text-align: left;
   gap: 30px;
-  max-width: 80%;
+  max-width: 75%;
   margin: 60px auto;
   padding: 40px;
-  color: white;
-  background-color: #726d80;
-  opacity: 0.85;
+  color: black;
+  background-color: rgba(242, 233, 228, 0.85);
+  opacity: 0.95;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
@@ -33,9 +34,9 @@ a:hover, a:focus {
 .about-img {
   width: 360px;
   height: 360px;
-  border-radius: 49%;
+  border-radius: 47%;
   object-fit: cover;
-  border: 4px solid #f2e9e4;
+  border: 4px solid #457b9d;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   align-self: flex-start;
 }
@@ -73,7 +74,7 @@ a:hover, a:focus {
   }
 
   .about-img {
-    width: 230px
+    width: 230px;
     height: 230px;
     margin-bottom: 20px;
   }
@@ -83,11 +84,15 @@ a:hover, a:focus {
 <div class="about-block">
     <img src="/assets/imgs/profile.png" alt="Profile Photo" class="about-img">
     <div class="about-text">
-        <h2>hello world ...</h2>
-        <p>
-            I'm Andrew Holmes; I am a Bellingham-based {machine learning researcher, data scientist, ai engineer} originally from Redondo Beach, California.
-            I am currently pursuing a Master's in Computer Science at Western Washington University -- with a specialization in application-driven machine learning -- with a Bachelor's in Data Science.
-            For the past 3 years, I have been a mixture of {research assistant, teaching assistant}.
-        </p>
+    <h2>hello world ...</h2>
+    <p>
+        I'm Andrew Holmes; I am a Bellingham-based {machine learning researcher, data scientist, ai engineer} originally from Redondo Beach, California. I am currently pursuing a Master's in Computer Science at Western Washington University -- with a specialization in application-driven machine learning -- with a Bachelor's in Data Science. For the last 3 years I have contributed to machine learning training and data pipelines for interesting real-world problems. I enjoy developing simple solutions to complex problems and have gotten to work in many domains, such as, climate science, archaeology, animal welfare, speech and language pathology, natural language processing, and computer vision.
+    </p>
+    <p>
+        Each experience has taught me how to adapt knowledge from one domain specific project to another. In my academic career, I have been able to supplement these projects with foundational knowledge on data science, machine learning, and deep learning; learning concepts on supervised and unsupervised learning techniques, training neural networks, CNNs, autoregressive models (RNN, LSTM, GRU), and transformers.
+    </p>
+    <p>
+        When I am away from the keyboard, I enjoy {rock climbing, hiking/camping, outrigger paddling, reading, playing board games}.
+    </p>
     </div>
 </div>
