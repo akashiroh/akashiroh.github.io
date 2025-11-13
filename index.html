@@ -160,6 +160,15 @@ a:hover, a:focus {
   color: #457b9d;
 }
 
+.publication-img img {
+  width: 80px;
+  height: auto;
+  background-color: white;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
 .authors, .publication-info {
   color: black;
   font-size: 1em;
@@ -175,7 +184,7 @@ a:hover, a:focus {
 .buttons a {
   text-decoration: none;
   padding: 6px 14px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 2px solid #457b9d;
   font-size: 0.9em;
   font-weight: bold;
@@ -276,6 +285,9 @@ a:hover, a:focus {
       <div class="buttons">
         <a href="/assets/imgs/g2p_report.pdf">report</a>
       </div>
+      <div class="publication-img">
+        <img src="/assets/imgs/g2p_logo.png" alt="g2p logo" />
+      </div>
     </div>
 
     <div class="publication">
@@ -288,6 +300,9 @@ a:hover, a:focus {
         <a href="https://github.com/hutchresearch/GCAMnet">GitHub</a>
         <a href="https://arxiv.org/abs/2412.08850">arXiv</a>
       </div>
+      <div class="publication-img">
+        <img src="/assets/imgs/gcam_logo.png" alt="GCAMnet logo" />
+      </div>
     </div>
 
     <div class="publication">
@@ -295,6 +310,9 @@ a:hover, a:focus {
       <div class="authors"><em>Collaboration with the Archaeology Department</em></div>
       <div class="publication-info">
         Fine-tuned a semantic segmentation model on aerial lidar data for binary pixel classification. Training on 50m × 50m patches with 11 channels {elevation, returns, intensity, varying relative elevation} achieved 0.56 F1 and 0.41 mIoU. Our targets are ground surveyed instead of lidar-derived, making this task harder than other works in this field.
+      </div>
+      <div class="publication-img">
+        <img src="/assets/imgs/arch_logo.png" alt="arch logo" />
       </div>
     </div>
 
