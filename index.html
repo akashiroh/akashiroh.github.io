@@ -4,47 +4,52 @@ title: Andrew Holmes
 ---
 
 <style>
+/* Global font + base link styles */
+body {
+  font-family: "Source Code Pro", monospace;
+  background-color: #f7f4f2;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
 
 a {
   font-weight: bold;
   text-decoration: underline;
+  color: #0056b3;
 }
 
 a:hover, a:focus {
   text-decoration: underline;
-  color: #0056b3;
+  color: #003d80;
 }
 
-
-
-.profile-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  max-width: 1200px;
+/* Unified profile card */
+.profile-card {
+  max-width: 1100px;
   margin: 60px auto;
-  gap: 50px;
-  padding: 20px;
-}
-
-
-
-.left-column {
-  flex: 0 0 320px;
   background-color: rgba(242, 233, 228, 0.85);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  padding: 25px;
-  text-align: center;
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: flex-start;
 }
 
-.left-column .profile-img {
+/* Profile image and bio section */
+.profile-left {
+  flex: 0 0 300px;
+  text-align: left;
+}
+
+.profile-left .profile-img {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  object-fit: cover;
   border: 4px solid #457b9d;
+  object-fit: cover;
   margin-bottom: 20px;
 }
 
@@ -52,7 +57,6 @@ a:hover, a:focus {
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 10px;
-  font-family: "Source Code Pro", monospace;
 }
 
 .bio p {
@@ -61,10 +65,10 @@ a:hover, a:focus {
   margin: 6px 0;
 }
 
+/* Social links */
 .social-links {
   margin-top: 15px;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 15px;
@@ -74,8 +78,8 @@ a:hover, a:focus {
 .social-links a {
   color: #726d80;
   font-size: 1.6rem;
-  transition: color 0.2s ease, transform 0.1s ease;
   text-decoration: none;
+  transition: color 0.2s ease, transform 0.1s ease;
 }
 
 .social-links a:hover {
@@ -83,39 +87,30 @@ a:hover, a:focus {
   transform: translateY(-2px);
 }
 
-
-
-.right-column {
+/* Right content */
+.profile-right {
   flex: 1;
-  background-color: rgba(242, 233, 228, 0.85);
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  color: black;
 }
 
-.right-column h1 {
+.profile-right h1 {
   text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
   margin: 0 0 30px 0;
-  font-family: "Source Code Pro", monospace;
 }
 
-.right-column h2 {
+.profile-right h2 {
   font-size: 2rem;
   margin: 0 0 15px 0;
-  font-family: "Source Code Pro", monospace;
 }
 
-.right-column p {
+.profile-right p {
   font-size: 1.2rem;
   line-height: 1.4;
   margin-bottom: 1em;
 }
 
-
-
+/* Divider line */
 .divider {
   width: 90%;
   height: 1px;
@@ -124,8 +119,7 @@ a:hover, a:focus {
   border: none;
 }
 
-
-
+/* Skill logo row */
 .image-row {
   display: flex;
   justify-content: center;
@@ -145,9 +139,7 @@ a:hover, a:focus {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-
-
-
+/* Publication / project cards */
 .publication {
   background-color: rgba(242, 233, 228, 0.25);
   border-radius: 10px;
@@ -161,22 +153,17 @@ a:hover, a:focus {
   font-weight: 750;
   color: black;
   margin-bottom: 6px;
-  transition: color 0.2s ease, font-weight 0.2s ease;
+  transition: color 0.2s ease;
 }
+
 .publication:hover .paper-title {
   color: #457b9d;
 }
 
-.authors {
-  font-size: 0.95em;
+.authors, .publication-info {
   color: black;
-  margin-bottom: 4px;
-}
-
-.publication-info {
   font-size: 1em;
-  color: black;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .buttons {
@@ -201,84 +188,57 @@ a:hover, a:focus {
   transform: translateY(-1px);
 }
 
-
-
-
+/* Responsive */
 @media (max-width: 900px) {
-  .profile-container {
+  .profile-card {
     flex-direction: column;
     align-items: center;
   }
 
-  .left-column,
-  .right-column {
+  .profile-left, .profile-right {
     width: 100%;
-  }
-
-  .right-column p {
-    font-size: 1rem;
   }
 
   .image-row img {
     width: 60px;
     height: 60px;
   }
+
+  .profile-right p {
+    font-size: 1rem;
+  }
 }
 </style>
 
-
-
-
-
-
-<div class="profile-container">
-
-  <div class="left-column">
-
-    <img src="/assets/imgs/profile1.jpg" alt="Profile Photo" class="profile-img"/>
+<div class="profile-card">
+  <div class="profile-left">
+    <img src="/assets/imgs/profile1.jpg" alt="Profile Photo" class="profile-img" />
 
     <div class="bio">
-
       <div class="social-links">
-        <a href="https://github.com/andrew-holmes" target="_blank"
-          ><i class="fab fa-github"></i
-        ></a>
-        <a href="https://www.linkedin.com/in/andrewholmes" target="_blank"
-          ><i class="fab fa-linkedin"></i
-        ></a>
-        <a href="https://scholar.google.com/citations?hl=en&user=mQYtXGMAAAAJ"
-          ><i class="fas fa-graduation-cap"></i
-        ></a>
+        <a href="https://github.com/akashiroh" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/holmes-andrew" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://scholar.google.com/citations?hl=en&user=mQYtXGMAAAAJ"><i class="fas fa-graduation-cap"></i></a>
       </div>
 
       <h2>Andrew Holmes</h2>
-      <p><i class="fa-solid fa-map-marker-alt">Bellingham, WA</p>
+      <p><i class="fa-solid fa-map-marker-alt"></i> Bellingham, WA</p>
       <p>
-        <b>Position:</b> Graduate Research Assistant<br/>
-        Western Washington University<br/>
+        <b>Position:</b> Graduate Research Assistant<br />
+        Western Washington University<br />
         Machine Learning • Deep Learning • NLP
       </p>
-
     </div>
   </div>
 
-  <!-- RIGHT COLUMN -->
-  <div class="right-column">
+  <div class="profile-right">
     <h1>Welcome to my website!</h1>
     <p>
-      I'm <b>Andrew Holmes</b>, a machine learning researcher, data scientist,
-      and AI engineer specializing in application-driven machine learning. I am
-      currently a <b>graduate research assistant</b> and teaching assistant at
-      Western Washington University finishing up my Master's in Computer
-      Science.
+      I'm <b>Andrew Holmes</b>, a machine learning researcher, data scientist, and AI engineer specializing in application-driven machine learning. I am currently a <b>graduate research assistant</b> and teaching assistant at Western Washington University finishing up my Master's in Computer Science.
     </p>
 
     <p>
-      My main focus of research has been in developing deep learning-based
-      <b>climate emulators</b>, decreasing the compute necessary to explore
-      spatial and temporal dynamics between climate and economic sectors. I also
-      have experience in natural language processing, deploying and finetuning
-      state-of-the-art models, and computer vision.
+      My main focus of research has been in developing deep learning-based <b>climate emulators</b>, decreasing the compute necessary to explore spatial and temporal dynamics between climate and economic sectors. I also have experience in natural language processing, deploying and finetuning state-of-the-art models, and computer vision.
     </p>
 
     <div class="divider"></div>
@@ -300,11 +260,7 @@ a:hover, a:focus {
       <div class="paper-title">Grapheme to Phoneme Machine Translation</div>
       <div class="authors"><em>CSCI 481 — Deep Learning</em></div>
       <div class="publication-info">
-        This project was part of a Deep Learning course at Western Washington
-        University. I trained a bi-directional GRU model on English
-        grapheme-phoneme pairs to better encode pronunciation patterns,
-        achieving a 9.89% word (phoneme) error rate — second-best in a class of
-        35+ students.
+        Trained a bi-directional GRU model on English grapheme-phoneme pairs to better encode pronunciation patterns, achieving a 9.89% word (phoneme) error rate — second-best in a class of 35+ students.
       </div>
       <div class="buttons">
         <a href="/assets/imgs/g2p_report.pdf">report</a>
@@ -313,17 +269,9 @@ a:hover, a:focus {
 
     <div class="publication">
       <div class="paper-title">GCAMnet</div>
-      <div class="authors">
-        <em
-          >Collaboration with the Joint Global Change Research Institute and
-          Pacific Northwest National Lab</em
-        >
-      </div>
+      <div class="authors"><em>Collaboration with the Joint Global Change Research Institute and Pacific Northwest National Lab</em></div>
       <div class="publication-info">
-        We explore GCAM ensemble designs by training a neural network to emulate
-        two case studies (<em>renewable energy</em>, <em>food scarcity</em>),
-        reducing required simulation data by 50%. The emulator efficiently
-        discovers optimal input configurations for desirable climate futures.
+        We explore GCAM ensemble designs by training a neural network to emulate two case studies (<em>renewable energy</em>, <em>food scarcity</em>), reducing required simulation data by 50%. The emulator efficiently discovers optimal input configurations for desirable climate futures.
       </div>
       <div class="buttons">
         <a href="https://github.com/hutchresearch/GCAMnet">GitHub</a>
@@ -335,10 +283,7 @@ a:hover, a:focus {
       <div class="paper-title">Mayapán Structure Semantic Segmentation</div>
       <div class="authors"><em>Collaboration with the Archaeology Department</em></div>
       <div class="publication-info">
-        Fine-tuned a semantic segmentation model on aerial lidar data for binary
-        pixel classification. Training on 50m × 50m patches (elevation, returns,
-        intensity, relative elevation) achieved 0.56 F1 and 0.41 mIoU — in line
-        with other work in this domain.
+        Fine-tuned a semantic segmentation model on aerial lidar data for binary pixel classification. Training on 50m × 50m patches (elevation, returns, intensity, relative elevation) achieved 0.56 F1 and 0.41 mIoU — in line with other work in this domain.
       </div>
     </div>
 
@@ -346,17 +291,12 @@ a:hover, a:focus {
 
     <h2>Selected Publications</h2>
     <div class="publication">
-      <div class="paper-title">
-        Emulating the Global Change Analysis Model with Deep Learning
-      </div>
+      <div class="paper-title">Emulating the Global Change Analysis Model with Deep Learning</div>
       <div class="authors">
-        <u><b>Andrew Holmes</b></u>, Matt Jensen, Sarah Coffland, Hidemi Mitani
-        Shen, Logan Sizemore, Seth Bassetti, Brenna Nieva, Claudia Tebaldi,
-        Abigail Snyder, Brian Hutchinson
+        <u><b>Andrew Holmes</b></u>, Matt Jensen, Sarah Coffland, Hidemi Mitani Shen, Logan Sizemore, Seth Bassetti, Brenna Nieva, Claudia Tebaldi, Abigail Snyder, Brian Hutchinson
       </div>
       <div class="publication-info">
-        Tackling Climate Change with Machine Learning Workshop, NeurIPS,
-        <em>2024</em>
+        Tackling Climate Change with Machine Learning Workshop, NeurIPS, <em>2024</em>
       </div>
       <div class="buttons">
         <a href="https://arxiv.org/abs/2412.08850">arXiv</a>
@@ -365,3 +305,4 @@ a:hover, a:focus {
     </div>
   </div>
 </div>
+
