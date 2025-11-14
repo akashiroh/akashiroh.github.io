@@ -69,10 +69,12 @@ a:hover, a:focus {
 .social-links {
   margin-top: 15px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
   flex-wrap: wrap;
+  text-align: left;
 }
 
 .social-links a {
@@ -253,11 +255,11 @@ a:hover, a:focus {
 
       <div class="divider"></div>
 
-      <p style="font-size: 1.1em">
-        <a href="https://github.com/akashiroh" target="_blank"><i class="fab fa-github"></i> github.com/akashiroh</a> </ br>
-        <a href="https://www.linkedin.com/in/holmes-andrew" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/holmes-andrew</a> </ br>
-        <a href="https://scholar.google.com/citations?hl=en&user=mQYtXGMAAAAJ"><i class="fas fa-graduation-cap"></i> scholar.google/andrew-holmes</a> </ br>
-      </p>
+      <div class="social-links">
+        <a href="https://github.com/akashiroh" target="_blank"><i class="fab fa-github"></i> github.com/akashiroh</a>
+        <a href="https://www.linkedin.com/in/holmes-andrew" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/holmes-andrew</a>
+        <a href="https://scholar.google.com/citations?hl=en&user=mQYtXGMAAAAJ"><i class="fas fa-graduation-cap"></i> scholar.google/andrew-holmes</a>
+      </div>
 
       <div class="divider"></div>
 
